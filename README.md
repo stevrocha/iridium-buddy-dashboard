@@ -1,4 +1,4 @@
-# inbazz-iridium-dashboard
+# iridium-buddy-dashboard
 
 Dashboard UGC do cliente (Buddy Nutrition + Iridium Labs). Single-file estático, hospedado no **GitHub Pages**, atualizado **a cada 4 horas** (6x ao dia) por uma scheduled task que roda no Cowork.
 
@@ -34,11 +34,11 @@ git add .
 git commit -m "primeira versao do dashboard UGC"
 ```
 
-Cria o repo no GitHub (vazio, sem README/license, pode ser privado ou público) — sugiro nome `inbazz-iridium-dashboard`. Depois:
+Cria o repo no GitHub (vazio, sem README/license, pode ser privado ou público) — sugiro nome `iridium-buddy-dashboard`. Depois:
 
 ```bash
 git branch -M main
-git remote add origin https://github.com/<SEU_USUARIO>/inbazz-iridium-dashboard.git
+git remote add origin https://github.com/<SEU_USUARIO>/iridium-buddy-dashboard.git
 git push -u origin main
 ```
 
@@ -55,7 +55,7 @@ No GitHub, vá em **Settings → Pages**:
 Em ~1 minuto o site fica online em:
 
 ```
-https://<SEU_USUARIO>.github.io/inbazz-iridium-dashboard/
+https://<SEU_USUARIO>.github.io/iridium-buddy-dashboard/
 ```
 
 A versão Inbazz light fica em `/index_inbazz.html`. A dark fica em `/index.html`.
@@ -77,7 +77,7 @@ A skill da task vive em `scheduled-task/SKILL.md`. Cron: `0 */4 * * *` (00/04/08
 1. GitHub → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**
 2. Nome: `iridium-dashboard-refresh`
 3. Expiration: 1 ano (lembre de rotacionar)
-4. Repository access: **Only select repositories → `inbazz-iridium-dashboard`**
+4. Repository access: **Only select repositories → `iridium-buddy-dashboard`**
 5. Repository permissions:
    - **Contents**: Read and write
 6. Gerar → copiar o token (começa com `github_pat_...`)

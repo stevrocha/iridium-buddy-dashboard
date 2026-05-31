@@ -7,7 +7,7 @@ timezone: America/Sao_Paulo
 
 # refresh-dashboard-iridium
 
-Roda **a cada 4 horas**, todos os dias (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 BRT). Pipeline diário com 6 snapshots. Lê dados do **Supabase MCP**, agrega por marca e farmer (mapping vem de tags em `influencer_stores.tags`, normalizadas via trim+lower), monta `dashboard.json` e commita em `main` do repo `stevrocha/inbazz-iridium-dashboard`. **AWS Amplify** auto-publica em ~1 minuto.
+Roda **a cada 4 horas**, todos os dias (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 BRT). Pipeline diário com 6 snapshots. Lê dados do **Supabase MCP**, agrega por marca e farmer (mapping vem de tags em `influencer_stores.tags`, normalizadas via trim+lower), monta `dashboard.json` e commita em `main` do repo `stevrocha/iridium-buddy-dashboard`. **AWS Amplify** auto-publica em ~1 minuto.
 
 ## Marcas e store_ids
 
@@ -30,7 +30,7 @@ Creator com 2+ tags-farmer vai pro bucket `compartilhado`. Creator sem nenhuma t
 ### 1. Carregar mapping manual + metas
 
 ```
-GET https://raw.githubusercontent.com/stevrocha/inbazz-iridium-dashboard/main/data/farmers.json
+GET https://raw.githubusercontent.com/stevrocha/iridium-buddy-dashboard/main/data/farmers.json
 ```
 
 Extrai `farmers_tags`, `farmer_display_names`, `metas_mensais` e `metas_sdr`.
@@ -202,7 +202,7 @@ Aplicar `farmer_display_names` do `farmers.json` no nome exibido (ex: `barbara` 
 ### 10. Commit via PAT
 
 ```
-PUT /repos/stevrocha/inbazz-iridium-dashboard/contents/data/dashboard.json
+PUT /repos/stevrocha/iridium-buddy-dashboard/contents/data/dashboard.json
 Authorization: Bearer <PAT>
 {
   "message": "refresh dashboard <data>",
