@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-01T12:56:27-03:00",
+    "geradoEm": "2026-06-01T16:06:20-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 2,
     "diasNoMes": 30,
@@ -16,67 +16,232 @@
       "faturamento_total": 861.05,
       "faturamento_m1": 63357.67,
       "mom_pct": -98.6,
-      "creators_total": 345,
+      "creators_total": 346,
       "creators_que_venderam": 4,
-      "creators_que_postaram": 6,
+      "creators_que_postaram": 9,
       "creators_dormentes": 321,
       "pedidos_total": 4,
       "ticket_medio": 215.26,
       "evolucao_diaria": [
-        {"dia": 1, "realizado_acumulado": 861.05}, {"dia": 2, "realizado_acumulado": 861.05},
-        {"dia": 3, "realizado_acumulado": 861.05}, {"dia": 4, "realizado_acumulado": 861.05},
-        {"dia": 5, "realizado_acumulado": 861.05}, {"dia": 6, "realizado_acumulado": 861.05},
-        {"dia": 7, "realizado_acumulado": 861.05}, {"dia": 8, "realizado_acumulado": 861.05},
-        {"dia": 9, "realizado_acumulado": 861.05}, {"dia": 10, "realizado_acumulado": 861.05},
-        {"dia": 11, "realizado_acumulado": 861.05}, {"dia": 12, "realizado_acumulado": 861.05},
-        {"dia": 13, "realizado_acumulado": 861.05}, {"dia": 14, "realizado_acumulado": 861.05},
-        {"dia": 15, "realizado_acumulado": 861.05}, {"dia": 16, "realizado_acumulado": 861.05},
-        {"dia": 17, "realizado_acumulado": 861.05}, {"dia": 18, "realizado_acumulado": 861.05},
-        {"dia": 19, "realizado_acumulado": 861.05}, {"dia": 20, "realizado_acumulado": 861.05},
-        {"dia": 21, "realizado_acumulado": 861.05}, {"dia": 22, "realizado_acumulado": 861.05},
-        {"dia": 23, "realizado_acumulado": 861.05}, {"dia": 24, "realizado_acumulado": 861.05},
-        {"dia": 25, "realizado_acumulado": 861.05}, {"dia": 26, "realizado_acumulado": 861.05},
-        {"dia": 27, "realizado_acumulado": 861.05}, {"dia": 28, "realizado_acumulado": 861.05},
-        {"dia": 29, "realizado_acumulado": 861.05}, {"dia": 30, "realizado_acumulado": 861.05}
+        {
+          "dia": 1,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 2,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 3,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 4,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 5,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 6,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 7,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 8,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 9,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 10,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 11,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 12,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 13,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 14,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 15,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 16,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 17,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 18,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 19,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 20,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 21,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 22,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 23,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 24,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 25,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 26,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 27,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 28,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 29,
+          "realizado_acumulado": 861.05
+        },
+        {
+          "dia": 30,
+          "realizado_acumulado": 861.05
+        }
       ],
       "farmers": [
         {
-          "id": "brion", "nome": "Brion", "color": "#3B82F6",
-          "faturamento": 379.95, "faturamento_m1": 44378.18, "mom_pct": -99.1,
-          "creators_total": 237, "creators_que_venderam": 2, "creators_que_postaram": 4,
-          "leads_no_mes": 0, "dormentes": 235, "pedidos": 2, "ticket_medio": 189.97,
+          "id": "brion",
+          "nome": "Brion",
+          "color": "#3B82F6",
+          "faturamento": 379.95,
+          "faturamento_m1": 44378.18,
+          "mom_pct": -99.1,
+          "creators_total": 237,
+          "creators_que_venderam": 2,
+          "creators_que_postaram": 5,
+          "leads_no_mes": 0,
+          "dormentes": 235,
+          "pedidos": 2,
+          "ticket_medio": 189.97,
           "top_creators": [
-            {"id": "CR-01", "nome": "@aslute_kira", "receita": 253.30},
-            {"id": "CR-02", "nome": "@petsko.nutrivet", "receita": 126.65}
+            {
+              "id": "CR-01",
+              "nome": "@aslute_kira",
+              "receita": 253.3
+            },
+            {
+              "id": "CR-02",
+              "nome": "@petsko.nutrivet",
+              "receita": 126.65
+            }
           ]
         },
         {
-          "id": "barbara", "nome": "Bárbara", "color": "#F97316",
-          "faturamento": 227.80, "faturamento_m1": 12446.80, "mom_pct": -98.2,
-          "creators_total": 83, "creators_que_venderam": 1, "creators_que_postaram": 2,
-          "leads_no_mes": 2, "dormentes": 80, "pedidos": 1, "ticket_medio": 227.80,
+          "id": "barbara",
+          "nome": "Bárbara",
+          "color": "#EC4899",
+          "faturamento": 227.8,
+          "faturamento_m1": 12446.8,
+          "mom_pct": -98.2,
+          "creators_total": 83,
+          "creators_que_venderam": 1,
+          "creators_que_postaram": 4,
+          "leads_no_mes": 2,
+          "dormentes": 80,
+          "pedidos": 1,
+          "ticket_medio": 227.8,
           "top_creators": [
-            {"id": "CR-01", "nome": "@caramelo_tiao", "receita": 227.80}
+            {
+              "id": "CR-01",
+              "nome": "@caramelo_tiao",
+              "receita": 227.8
+            }
           ]
         },
         {
-          "id": "gabi", "nome": "Gabi", "color": "#22C55E",
-          "faturamento": 0, "faturamento_m1": 330.22, "mom_pct": -100.0,
-          "creators_total": 9, "creators_que_venderam": 0, "creators_que_postaram": 0,
-          "leads_no_mes": 9, "dormentes": 0, "pedidos": 0, "ticket_medio": 0,
+          "id": "gabi",
+          "nome": "Gabi",
+          "color": "#10B981",
+          "faturamento": 0.0,
+          "faturamento_m1": 330.22,
+          "mom_pct": -100.0,
+          "creators_total": 9,
+          "creators_que_venderam": 0,
+          "creators_que_postaram": 0,
+          "leads_no_mes": 9,
+          "dormentes": 0,
+          "pedidos": 0,
+          "ticket_medio": null,
           "top_creators": []
         }
       ],
       "ranking_farmers": [
-        {"posicao": 1, "id": "brion",   "nome": "Brion",   "faturamento": 379.95, "mom_pct":  -99.1, "trofeu": "ouro"},
-        {"posicao": 2, "id": "barbara", "nome": "Bárbara", "faturamento": 227.80, "mom_pct":  -98.2, "trofeu": "prata"},
-        {"posicao": 3, "id": "gabi",    "nome": "Gabi",    "faturamento":   0.00, "mom_pct": -100.0, "trofeu": "bronze"}
+        {
+          "posicao": 1,
+          "id": "brion",
+          "nome": "Brion",
+          "faturamento": 379.95,
+          "mom_pct": -99.1,
+          "trofeu": "ouro"
+        },
+        {
+          "posicao": 2,
+          "id": "barbara",
+          "nome": "Bárbara",
+          "faturamento": 227.8,
+          "mom_pct": -98.2,
+          "trofeu": "prata"
+        },
+        {
+          "posicao": 3,
+          "id": "gabi",
+          "nome": "Gabi",
+          "faturamento": 0.0,
+          "mom_pct": -100.0,
+          "trofeu": "bronze"
+        }
       ],
       "sdr": {
-        "prospeccoes_total": 20,
         "meta": 30,
+        "leads_no_mes": 21,
         "convertidos": 2,
-        "conversao_pct": 10.0,
+        "conversao_pct": 9.5,
         "dias_medios_1venda": 3.0
       }
     },
@@ -84,62 +249,216 @@
       "id": "a688853e-24e2-4eb2-b2b9-e69545aeafc7",
       "name": "Iridium Labs",
       "logoEmoji": "⚡",
-      "color": "#A855F7",
+      "color": "#6366F1",
       "meta_mensal": 70000,
-      "faturamento_total": 1297.81,
+      "faturamento_total": 1718.54,
       "faturamento_m1": 54682.61,
-      "mom_pct": -97.6,
+      "mom_pct": -96.9,
       "creators_total": 233,
-      "creators_que_venderam": 4,
-      "creators_que_postaram": 9,
-      "creators_dormentes": 215,
-      "pedidos_total": 6,
-      "ticket_medio": 216.30,
+      "creators_que_venderam": 6,
+      "creators_que_postaram": 15,
+      "creators_dormentes": 213,
+      "pedidos_total": 8,
+      "ticket_medio": 214.82,
       "evolucao_diaria": [
-        {"dia": 1, "realizado_acumulado": 1297.81}, {"dia": 2, "realizado_acumulado": 1297.81},
-        {"dia": 3, "realizado_acumulado": 1297.81}, {"dia": 4, "realizado_acumulado": 1297.81},
-        {"dia": 5, "realizado_acumulado": 1297.81}, {"dia": 6, "realizado_acumulado": 1297.81},
-        {"dia": 7, "realizado_acumulado": 1297.81}, {"dia": 8, "realizado_acumulado": 1297.81},
-        {"dia": 9, "realizado_acumulado": 1297.81}, {"dia": 10, "realizado_acumulado": 1297.81},
-        {"dia": 11, "realizado_acumulado": 1297.81}, {"dia": 12, "realizado_acumulado": 1297.81},
-        {"dia": 13, "realizado_acumulado": 1297.81}, {"dia": 14, "realizado_acumulado": 1297.81},
-        {"dia": 15, "realizado_acumulado": 1297.81}, {"dia": 16, "realizado_acumulado": 1297.81},
-        {"dia": 17, "realizado_acumulado": 1297.81}, {"dia": 18, "realizado_acumulado": 1297.81},
-        {"dia": 19, "realizado_acumulado": 1297.81}, {"dia": 20, "realizado_acumulado": 1297.81},
-        {"dia": 21, "realizado_acumulado": 1297.81}, {"dia": 22, "realizado_acumulado": 1297.81},
-        {"dia": 23, "realizado_acumulado": 1297.81}, {"dia": 24, "realizado_acumulado": 1297.81},
-        {"dia": 25, "realizado_acumulado": 1297.81}, {"dia": 26, "realizado_acumulado": 1297.81},
-        {"dia": 27, "realizado_acumulado": 1297.81}, {"dia": 28, "realizado_acumulado": 1297.81},
-        {"dia": 29, "realizado_acumulado": 1297.81}, {"dia": 30, "realizado_acumulado": 1297.81}
+        {
+          "dia": 1,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 2,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 3,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 4,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 5,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 6,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 7,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 8,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 9,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 10,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 11,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 12,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 13,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 14,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 15,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 16,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 17,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 18,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 19,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 20,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 21,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 22,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 23,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 24,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 25,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 26,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 27,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 28,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 29,
+          "realizado_acumulado": 1718.54
+        },
+        {
+          "dia": 30,
+          "realizado_acumulado": 1718.54
+        }
       ],
       "farmers": [
         {
-          "id": "carol", "nome": "Carol", "color": "#F97316",
-          "faturamento": 762.35, "faturamento_m1": 16212.53, "mom_pct": -95.3,
-          "creators_total": 111, "creators_que_venderam": 2, "creators_que_postaram": 4,
-          "leads_no_mes": 3, "dormentes": 106, "pedidos": 3, "ticket_medio": 254.12,
+          "id": "carol",
+          "nome": "Carol",
+          "color": "#06B6D4",
+          "faturamento": 1013.09,
+          "faturamento_m1": 16212.53,
+          "mom_pct": -93.8,
+          "creators_total": 111,
+          "creators_que_venderam": 3,
+          "creators_que_postaram": 6,
+          "leads_no_mes": 3,
+          "dormentes": 105,
+          "pedidos": 4,
+          "ticket_medio": 253.27,
           "top_creators": [
-            {"id": "CR-01", "nome": "@fernandosantoforte", "receita": 452.14},
-            {"id": "CR-02", "nome": "@camilepezzin",       "receita": 310.21}
+            {
+              "id": "CR-01",
+              "nome": "@fernandosantoforte",
+              "receita": 452.14
+            },
+            {
+              "id": "CR-02",
+              "nome": "@camilepezzin",
+              "receita": 310.21
+            },
+            {
+              "id": "CR-03",
+              "nome": "@gabiahnert",
+              "receita": 250.74
+            }
           ]
         },
         {
-          "id": "guilherme", "nome": "Guilherme", "color": "#3B82F6",
-          "faturamento": 169.99, "faturamento_m1": 18480.42, "mom_pct": -99.1,
-          "creators_total": 110, "creators_que_venderam": 1, "creators_que_postaram": 4,
-          "leads_no_mes": 8, "dormentes": 101, "pedidos": 1, "ticket_medio": 169.99,
+          "id": "guilherme",
+          "nome": "Guilherme",
+          "color": "#8B5CF6",
+          "faturamento": 169.99,
+          "faturamento_m1": 18480.42,
+          "mom_pct": -99.1,
+          "creators_total": 110,
+          "creators_que_venderam": 1,
+          "creators_que_postaram": 8,
+          "leads_no_mes": 8,
+          "dormentes": 101,
+          "pedidos": 1,
+          "ticket_medio": 169.99,
           "top_creators": [
-            {"id": "CR-01", "nome": "@felipesart", "receita": 169.99}
+            {
+              "id": "CR-01",
+              "nome": "@felipesart",
+              "receita": 169.99
+            }
           ]
         }
       ],
       "ranking_farmers": [
-        {"posicao": 1, "id": "carol",     "nome": "Carol",     "faturamento": 762.35, "mom_pct": -95.3, "trofeu": "ouro"},
-        {"posicao": 2, "id": "guilherme", "nome": "Guilherme", "faturamento": 169.99, "mom_pct": -99.1, "trofeu": "prata"}
+        {
+          "posicao": 1,
+          "id": "carol",
+          "nome": "Carol",
+          "faturamento": 1013.09,
+          "mom_pct": -93.8,
+          "trofeu": "ouro"
+        },
+        {
+          "posicao": 2,
+          "id": "guilherme",
+          "nome": "Guilherme",
+          "faturamento": 169.99,
+          "mom_pct": -99.1,
+          "trofeu": "prata"
+        }
       ],
       "sdr": {
-        "prospeccoes_total": 14,
         "meta": 25,
+        "leads_no_mes": 14,
         "convertidos": 4,
         "conversao_pct": 28.6,
         "dias_medios_1venda": 9.8
