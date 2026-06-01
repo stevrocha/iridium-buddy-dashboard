@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-01T09:25:17-03:00",
+    "geradoEm": "2026-06-01T12:56:27-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 2,
     "diasNoMes": 30,
@@ -13,44 +13,47 @@
       "logoEmoji": "🐾",
       "color": "#F97316",
       "meta_mensal": 80000,
-      "faturamento_total": 481.10,
+      "faturamento_total": 861.05,
       "faturamento_m1": 63357.67,
-      "mom_pct": -99.2,
+      "mom_pct": -98.6,
       "creators_total": 345,
-      "creators_que_venderam": 2,
-      "creators_que_postaram": 0,
-      "creators_dormentes": 323,
-      "pedidos_total": 2,
-      "ticket_medio": 240.55,
+      "creators_que_venderam": 4,
+      "creators_que_postaram": 6,
+      "creators_dormentes": 321,
+      "pedidos_total": 4,
+      "ticket_medio": 215.26,
       "evolucao_diaria": [
-        {"dia": 1, "realizado_acumulado": 481.10}, {"dia": 2, "realizado_acumulado": 481.10},
-        {"dia": 3, "realizado_acumulado": 481.10}, {"dia": 4, "realizado_acumulado": 481.10},
-        {"dia": 5, "realizado_acumulado": 481.10}, {"dia": 6, "realizado_acumulado": 481.10},
-        {"dia": 7, "realizado_acumulado": 481.10}, {"dia": 8, "realizado_acumulado": 481.10},
-        {"dia": 9, "realizado_acumulado": 481.10}, {"dia": 10, "realizado_acumulado": 481.10},
-        {"dia": 11, "realizado_acumulado": 481.10}, {"dia": 12, "realizado_acumulado": 481.10},
-        {"dia": 13, "realizado_acumulado": 481.10}, {"dia": 14, "realizado_acumulado": 481.10},
-        {"dia": 15, "realizado_acumulado": 481.10}, {"dia": 16, "realizado_acumulado": 481.10},
-        {"dia": 17, "realizado_acumulado": 481.10}, {"dia": 18, "realizado_acumulado": 481.10},
-        {"dia": 19, "realizado_acumulado": 481.10}, {"dia": 20, "realizado_acumulado": 481.10},
-        {"dia": 21, "realizado_acumulado": 481.10}, {"dia": 22, "realizado_acumulado": 481.10},
-        {"dia": 23, "realizado_acumulado": 481.10}, {"dia": 24, "realizado_acumulado": 481.10},
-        {"dia": 25, "realizado_acumulado": 481.10}, {"dia": 26, "realizado_acumulado": 481.10},
-        {"dia": 27, "realizado_acumulado": 481.10}, {"dia": 28, "realizado_acumulado": 481.10},
-        {"dia": 29, "realizado_acumulado": 481.10}, {"dia": 30, "realizado_acumulado": 481.10}
+        {"dia": 1, "realizado_acumulado": 861.05}, {"dia": 2, "realizado_acumulado": 861.05},
+        {"dia": 3, "realizado_acumulado": 861.05}, {"dia": 4, "realizado_acumulado": 861.05},
+        {"dia": 5, "realizado_acumulado": 861.05}, {"dia": 6, "realizado_acumulado": 861.05},
+        {"dia": 7, "realizado_acumulado": 861.05}, {"dia": 8, "realizado_acumulado": 861.05},
+        {"dia": 9, "realizado_acumulado": 861.05}, {"dia": 10, "realizado_acumulado": 861.05},
+        {"dia": 11, "realizado_acumulado": 861.05}, {"dia": 12, "realizado_acumulado": 861.05},
+        {"dia": 13, "realizado_acumulado": 861.05}, {"dia": 14, "realizado_acumulado": 861.05},
+        {"dia": 15, "realizado_acumulado": 861.05}, {"dia": 16, "realizado_acumulado": 861.05},
+        {"dia": 17, "realizado_acumulado": 861.05}, {"dia": 18, "realizado_acumulado": 861.05},
+        {"dia": 19, "realizado_acumulado": 861.05}, {"dia": 20, "realizado_acumulado": 861.05},
+        {"dia": 21, "realizado_acumulado": 861.05}, {"dia": 22, "realizado_acumulado": 861.05},
+        {"dia": 23, "realizado_acumulado": 861.05}, {"dia": 24, "realizado_acumulado": 861.05},
+        {"dia": 25, "realizado_acumulado": 861.05}, {"dia": 26, "realizado_acumulado": 861.05},
+        {"dia": 27, "realizado_acumulado": 861.05}, {"dia": 28, "realizado_acumulado": 861.05},
+        {"dia": 29, "realizado_acumulado": 861.05}, {"dia": 30, "realizado_acumulado": 861.05}
       ],
       "farmers": [
         {
           "id": "brion", "nome": "Brion", "color": "#3B82F6",
-          "faturamento": 0, "faturamento_m1": 44378.18, "mom_pct": -100.0,
-          "creators_total": 237, "creators_que_venderam": 0, "creators_que_postaram": 0,
-          "leads_no_mes": 0, "dormentes": 237, "pedidos": 0, "ticket_medio": 0,
-          "top_creators": []
+          "faturamento": 379.95, "faturamento_m1": 44378.18, "mom_pct": -99.1,
+          "creators_total": 237, "creators_que_venderam": 2, "creators_que_postaram": 4,
+          "leads_no_mes": 0, "dormentes": 235, "pedidos": 2, "ticket_medio": 189.97,
+          "top_creators": [
+            {"id": "CR-01", "nome": "@aslute_kira", "receita": 253.30},
+            {"id": "CR-02", "nome": "@petsko.nutrivet", "receita": 126.65}
+          ]
         },
         {
           "id": "barbara", "nome": "Bárbara", "color": "#F97316",
           "faturamento": 227.80, "faturamento_m1": 12446.80, "mom_pct": -98.2,
-          "creators_total": 83, "creators_que_venderam": 1, "creators_que_postaram": 0,
+          "creators_total": 83, "creators_que_venderam": 1, "creators_que_postaram": 2,
           "leads_no_mes": 2, "dormentes": 80, "pedidos": 1, "ticket_medio": 227.80,
           "top_creators": [
             {"id": "CR-01", "nome": "@caramelo_tiao", "receita": 227.80}
@@ -65,8 +68,8 @@
         }
       ],
       "ranking_farmers": [
-        {"posicao": 1, "id": "barbara", "nome": "Bárbara", "faturamento": 227.80, "mom_pct":  -98.2, "trofeu": "ouro"},
-        {"posicao": 2, "id": "brion",   "nome": "Brion",   "faturamento":   0.00, "mom_pct": -100.0, "trofeu": "prata"},
+        {"posicao": 1, "id": "brion",   "nome": "Brion",   "faturamento": 379.95, "mom_pct":  -99.1, "trofeu": "ouro"},
+        {"posicao": 2, "id": "barbara", "nome": "Bárbara", "faturamento": 227.80, "mom_pct":  -98.2, "trofeu": "prata"},
         {"posicao": 3, "id": "gabi",    "nome": "Gabi",    "faturamento":   0.00, "mom_pct": -100.0, "trofeu": "bronze"}
       ],
       "sdr": {
@@ -83,37 +86,37 @@
       "logoEmoji": "⚡",
       "color": "#A855F7",
       "meta_mensal": 70000,
-      "faturamento_total": 1068.33,
+      "faturamento_total": 1297.81,
       "faturamento_m1": 54682.61,
-      "mom_pct": -98.0,
+      "mom_pct": -97.6,
       "creators_total": 233,
       "creators_que_venderam": 4,
-      "creators_que_postaram": 5,
+      "creators_que_postaram": 9,
       "creators_dormentes": 215,
-      "pedidos_total": 5,
-      "ticket_medio": 213.67,
+      "pedidos_total": 6,
+      "ticket_medio": 216.30,
       "evolucao_diaria": [
-        {"dia": 1, "realizado_acumulado": 1068.33}, {"dia": 2, "realizado_acumulado": 1068.33},
-        {"dia": 3, "realizado_acumulado": 1068.33}, {"dia": 4, "realizado_acumulado": 1068.33},
-        {"dia": 5, "realizado_acumulado": 1068.33}, {"dia": 6, "realizado_acumulado": 1068.33},
-        {"dia": 7, "realizado_acumulado": 1068.33}, {"dia": 8, "realizado_acumulado": 1068.33},
-        {"dia": 9, "realizado_acumulado": 1068.33}, {"dia": 10, "realizado_acumulado": 1068.33},
-        {"dia": 11, "realizado_acumulado": 1068.33}, {"dia": 12, "realizado_acumulado": 1068.33},
-        {"dia": 13, "realizado_acumulado": 1068.33}, {"dia": 14, "realizado_acumulado": 1068.33},
-        {"dia": 15, "realizado_acumulado": 1068.33}, {"dia": 16, "realizado_acumulado": 1068.33},
-        {"dia": 17, "realizado_acumulado": 1068.33}, {"dia": 18, "realizado_acumulado": 1068.33},
-        {"dia": 19, "realizado_acumulado": 1068.33}, {"dia": 20, "realizado_acumulado": 1068.33},
-        {"dia": 21, "realizado_acumulado": 1068.33}, {"dia": 22, "realizado_acumulado": 1068.33},
-        {"dia": 23, "realizado_acumulado": 1068.33}, {"dia": 24, "realizado_acumulado": 1068.33},
-        {"dia": 25, "realizado_acumulado": 1068.33}, {"dia": 26, "realizado_acumulado": 1068.33},
-        {"dia": 27, "realizado_acumulado": 1068.33}, {"dia": 28, "realizado_acumulado": 1068.33},
-        {"dia": 29, "realizado_acumulado": 1068.33}, {"dia": 30, "realizado_acumulado": 1068.33}
+        {"dia": 1, "realizado_acumulado": 1297.81}, {"dia": 2, "realizado_acumulado": 1297.81},
+        {"dia": 3, "realizado_acumulado": 1297.81}, {"dia": 4, "realizado_acumulado": 1297.81},
+        {"dia": 5, "realizado_acumulado": 1297.81}, {"dia": 6, "realizado_acumulado": 1297.81},
+        {"dia": 7, "realizado_acumulado": 1297.81}, {"dia": 8, "realizado_acumulado": 1297.81},
+        {"dia": 9, "realizado_acumulado": 1297.81}, {"dia": 10, "realizado_acumulado": 1297.81},
+        {"dia": 11, "realizado_acumulado": 1297.81}, {"dia": 12, "realizado_acumulado": 1297.81},
+        {"dia": 13, "realizado_acumulado": 1297.81}, {"dia": 14, "realizado_acumulado": 1297.81},
+        {"dia": 15, "realizado_acumulado": 1297.81}, {"dia": 16, "realizado_acumulado": 1297.81},
+        {"dia": 17, "realizado_acumulado": 1297.81}, {"dia": 18, "realizado_acumulado": 1297.81},
+        {"dia": 19, "realizado_acumulado": 1297.81}, {"dia": 20, "realizado_acumulado": 1297.81},
+        {"dia": 21, "realizado_acumulado": 1297.81}, {"dia": 22, "realizado_acumulado": 1297.81},
+        {"dia": 23, "realizado_acumulado": 1297.81}, {"dia": 24, "realizado_acumulado": 1297.81},
+        {"dia": 25, "realizado_acumulado": 1297.81}, {"dia": 26, "realizado_acumulado": 1297.81},
+        {"dia": 27, "realizado_acumulado": 1297.81}, {"dia": 28, "realizado_acumulado": 1297.81},
+        {"dia": 29, "realizado_acumulado": 1297.81}, {"dia": 30, "realizado_acumulado": 1297.81}
       ],
       "farmers": [
         {
           "id": "carol", "nome": "Carol", "color": "#F97316",
           "faturamento": 762.35, "faturamento_m1": 16212.53, "mom_pct": -95.3,
-          "creators_total": 111, "creators_que_venderam": 2, "creators_que_postaram": 1,
+          "creators_total": 111, "creators_que_venderam": 2, "creators_que_postaram": 4,
           "leads_no_mes": 3, "dormentes": 106, "pedidos": 3, "ticket_medio": 254.12,
           "top_creators": [
             {"id": "CR-01", "nome": "@fernandosantoforte", "receita": 452.14},
@@ -123,7 +126,7 @@
         {
           "id": "guilherme", "nome": "Guilherme", "color": "#3B82F6",
           "faturamento": 169.99, "faturamento_m1": 18480.42, "mom_pct": -99.1,
-          "creators_total": 110, "creators_que_venderam": 1, "creators_que_postaram": 3,
+          "creators_total": 110, "creators_que_venderam": 1, "creators_que_postaram": 4,
           "leads_no_mes": 8, "dormentes": 101, "pedidos": 1, "ticket_medio": 169.99,
           "top_creators": [
             {"id": "CR-01", "nome": "@felipesart", "receita": 169.99}
