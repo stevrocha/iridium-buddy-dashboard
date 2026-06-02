@@ -44,7 +44,7 @@ Roberto e Jessica taggam cada `influencer_stores.tags` com o nome do farmer resp
 **Buddy**: `brion`, `barbara`, `alice`, `gabi`, `doug`
 **Iridium**: `carol`, `guilherme`, `vitoria`
 
-Creator com 2+ tags-farmer vai pro bucket `compartilhado`. Creator sem nenhuma tag-farmer entra no total da marca mas **não aparece na agregação por farmer** (loga aviso).
+Creator com 2+ tags-farmer vai pro bucket `compartilhado`. Creator sem nenhuma tag-farmer cai no bucket `sem_farmer` — visível no ranking e demais visuais com estilo distinto (cinza, sem trofeu, label "Sem Farmer · pendente Roberto/Jessica"). Isso garante que o total da marca sempre fecha com a soma dos farmers.
 
 ## Fluxo
 
@@ -130,6 +130,32 @@ GROUP BY b.store_id, b.farmer_bucket, b.tipo;
 ```
 
 ⚠️ `leads_mes` = `approved_at` dentro do mês corrente (mês de calendário, **não** janela rolante 30d). O label do front é "Prospecções **no mês**".
+
+### 3b. Sem Farmer — approved sem nenhuma tag de farmer
+
+Os perfis approved da marca que **não casam com nenhuma** das tags em `farmers_tags` ficam fora do master query da seção 3 (porque o `JOIN farmer_tags` filtra). Pra fechar o total da marca, roda essa segunda query por marca × tipo:
+
+```sql
+WITH farmer_tags AS (
+  SELECT '1dedd6dc-...'::uuid AS store_id, unnest(ARRAY[...]) AS t
+  UNION ALL
+  SELECT 'a688853e-...'::uuid AS store_id, unnest(ARRAY[...]) AS t
+),
+sem_farmer AS (
+  SELECT ins.*
+  FROM influencer_stores ins
+  WHERE ins.deleted_at IS NULL AND ins.removed_at IS NULL AND ins.status='approved'
+    AND ins.store_id IN (...)
+    AND NOT EXISTS (
+      SELECT 1 FROM unnest(ins.tags) raw_tag
+      JOIN farmer_tags ft ON ft.store_id = ins.store_id AND ft.t = lower(trim(raw_tag))
+    )
+)
+-- agrega total/venderam/postaram/faturamento/pedidos/leads_mes/dormentes/faturamento_m1
+-- por (store_id, tipo) usando os mesmos LEFT JOINs sales_mes/posts_mes/sales_m1
+```
+
+Esse bucket vira o farmer `{id:"sem_farmer", nome:"Sem Farmer", color:"#6B7280"}` no JSON, com `_sem_farmer:true`. No ranking, recebe `sem_farmer:true` e `trofeu:null` (não compete).
 
 ### 4. MoM — mesma query com janela M-1
 
@@ -266,6 +292,8 @@ Schema completo em `../data/dashboard.json` (este repo). Campos:
 - `marca.farmers[].faturamento_m1`, `mom_pct`, `dormentes`, `pedidos`, `ticket_medio`, `top_creators`
 - `marca.ranking_farmers` (array de `{posicao, id, nome, faturamento, mom_pct, trofeu}` — derivado, ordenando farmers por faturamento desc; trofeu: ouro/prata/bronze pras 3 primeiras)
 - `marca.sdr.prospeccoes_total` ⚠️ **NOME CRÍTICO** (não `leads_no_mes`), `meta`, `convertidos`, `conversao_pct`, `dias_medios_1venda` — **leads do mês corrente**, não rolling 30d
+- `marca.farmers[]` inclui bucket `sem_farmer` (id="sem_farmer") quando há perfis sem tag — soma de farmers fecha o total da marca
+- `marca.ranking_farmers[].sem_farmer = true` sinaliza o bucket sem tag (front renderiza sem trofeu e com aviso pra taggar)
 - `creators_total` = approved da marca com `profile_groups.tipo='creator'` (captura conteúdo)
 - `afiliados_total` = approved da marca com `profile_groups.tipo='afiliado'` (só vendas)
 - `creators_que_venderam`, `creators_que_postaram`, `creators_dormentes`, `faturamento_creators`, `pedidos_creators` — pool de creators

@@ -127,6 +127,8 @@
   .podium-row.gold   { background: linear-gradient(90deg, rgba(250,204,21,.10), rgba(250,204,21,0)); border-color: rgba(250,204,21,.35); }
   .podium-row.silver { background: linear-gradient(90deg, rgba(203,213,225,.08), rgba(203,213,225,0)); border-color: rgba(203,213,225,.25); }
   .podium-row.bronze { background: linear-gradient(90deg, rgba(251,146,60,.08), rgba(251,146,60,0)); border-color: rgba(251,146,60,.25); }
+  .podium-row.sem-farmer { background: repeating-linear-gradient(45deg, rgba(139,148,158,.04), rgba(139,148,158,.04) 6px, transparent 6px, transparent 12px), var(--card-2); border-color: rgba(139,148,158,.25); border-style: dashed; }
+  .podium-row.sem-farmer .podium-pos { color: var(--red); }
   .podium-medal { font-size: 26px; line-height: 1; text-align: center; }
   .podium-pos { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
   .podium-name { font-size: 16px; font-weight: 700; color: var(--text); margin-top: 2px; line-height: 1.1; }
@@ -639,21 +641,29 @@
     if (!ranking.length) return '<div style="color:var(--muted);font-size:12px">Sem dados</div>';
     return `
       <div class="podium">
-        ${ranking.map(r => `
-          <div class="podium-row ${r.trofeu}">
+        ${ranking.map(r => {
+          const isSem = r.sem_farmer || r.id === 'sem_farmer';
+          const cls = isSem ? 'sem-farmer' : (r.trofeu || '');
+          const medal = isSem ? '❓' : medalIcon(r.trofeu);
+          const posLabel = isSem ? 'SEM FARMER' : `${r.posicao}º LUGAR`;
+          const subLine = isSem
+            ? '<div style="font-size:11px;color:var(--muted);margin-top:4px">Sem tag de farmer — pendente Roberto/Jessica</div>'
+            : momBadge(r.mom_pct);
+          return `
+          <div class="podium-row ${cls}">
             <div>
-              <div class="podium-medal">${medalIcon(r.trofeu)}</div>
-              <div class="podium-pos" style="text-align:center">${r.posicao}º LUGAR</div>
+              <div class="podium-medal">${medal}</div>
+              <div class="podium-pos" style="text-align:center">${posLabel}</div>
             </div>
             <div>
               <div class="podium-name">${escapeHtml(r.nome)}</div>
-              <div>${momBadge(r.mom_pct)}</div>
+              <div>${subLine}</div>
             </div>
             <div>
-              <div class="podium-fat">${fmtBRL(r.faturamento)}</div>
+              <div class="podium-fat" style="${isSem ? 'color:var(--muted)' : ''}">${fmtBRL(r.faturamento)}</div>
             </div>
-          </div>
-        `).join('')}
+          </div>`;
+        }).join('')}
       </div>
     `;
   }

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-01T21:38:33-03:00",
+    "geradoEm": "2026-06-01T21:52:35-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 3,
     "diasNoMes": 30,
@@ -233,6 +233,44 @@
             "dormentes": 0
           },
           "top_creators": []
+        },
+        {
+          "id": "sem_farmer",
+          "nome": "Sem Farmer",
+          "color": "#6B7280",
+          "faturamento": 253.3,
+          "faturamento_m1": 6202.47,
+          "mom_pct": -95.9,
+          "creators_total": 17,
+          "creators_que_venderam": 1,
+          "creators_que_postaram": 0,
+          "leads_no_mes": 1,
+          "dormentes": 6,
+          "pedidos": 1,
+          "ticket_medio": 253.3,
+          "creators_pool": {
+            "total": 5,
+            "venderam": 1,
+            "postaram": 0,
+            "faturamento": 253.3,
+            "pedidos": 1,
+            "dormentes": 3
+          },
+          "afiliados_pool": {
+            "total": 12,
+            "venderam": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 3
+          },
+          "top_creators": [
+            {
+              "username": "bitten_anna",
+              "name": "Anna",
+              "receita": 253.3
+            }
+          ],
+          "_sem_farmer": true
         }
       ],
       "ranking_farmers": [
@@ -242,7 +280,8 @@
           "nome": "Brion",
           "faturamento": 1215.5,
           "mom_pct": -97.3,
-          "trofeu": "ouro"
+          "trofeu": "ouro",
+          "sem_farmer": false
         },
         {
           "posicao": 2,
@@ -250,31 +289,44 @@
           "nome": "Bárbara",
           "faturamento": 632.4,
           "mom_pct": -94.9,
-          "trofeu": "prata"
+          "trofeu": "prata",
+          "sem_farmer": false
         },
         {
           "posicao": 3,
+          "id": "sem_farmer",
+          "nome": "Sem Farmer",
+          "faturamento": 253.3,
+          "mom_pct": -95.9,
+          "trofeu": null,
+          "sem_farmer": true
+        },
+        {
+          "posicao": 4,
           "id": "alice",
           "nome": "Alice",
           "faturamento": 0.0,
           "mom_pct": null,
-          "trofeu": "bronze"
+          "trofeu": "bronze",
+          "sem_farmer": false
         },
         {
-          "posicao": 4,
+          "posicao": 5,
           "id": "gabi",
           "nome": "Gabi",
           "faturamento": 0.0,
           "mom_pct": -100.0,
-          "trofeu": null
+          "trofeu": null,
+          "sem_farmer": false
         },
         {
-          "posicao": 5,
+          "posicao": 6,
           "id": "doug",
           "nome": "Doug",
           "faturamento": 0.0,
           "mom_pct": null,
-          "trofeu": null
+          "trofeu": null,
+          "sem_farmer": false
         }
       ],
       "sdr": {
@@ -429,32 +481,87 @@
             "dormentes": 0
           },
           "top_creators": []
+        },
+        {
+          "id": "sem_farmer",
+          "nome": "Sem Farmer",
+          "color": "#6B7280",
+          "faturamento": 1419.39,
+          "faturamento_m1": 19989.66,
+          "mom_pct": -92.9,
+          "creators_total": 12,
+          "creators_que_venderam": 2,
+          "creators_que_postaram": 1,
+          "leads_no_mes": 0,
+          "dormentes": 7,
+          "pedidos": 7,
+          "ticket_medio": 202.77,
+          "creators_pool": {
+            "total": 1,
+            "venderam": 0,
+            "postaram": 1,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
+          "afiliados_pool": {
+            "total": 11,
+            "venderam": 2,
+            "faturamento": 1419.39,
+            "pedidos": 7,
+            "dormentes": 7
+          },
+          "top_creators": [
+            {
+              "username": "andressapedrozza",
+              "name": "Andressa",
+              "receita": 1062.42
+            },
+            {
+              "username": "leismanntai",
+              "name": "Tainara",
+              "receita": 356.97
+            }
+          ],
+          "_sem_farmer": true
         }
       ],
       "ranking_farmers": [
         {
           "posicao": 1,
+          "id": "sem_farmer",
+          "nome": "Sem Farmer",
+          "faturamento": 1419.39,
+          "mom_pct": -92.9,
+          "trofeu": null,
+          "sem_farmer": true
+        },
+        {
+          "posicao": 2,
           "id": "carol",
           "nome": "Carol",
           "faturamento": 1238.32,
           "mom_pct": -92.4,
-          "trofeu": "ouro"
+          "trofeu": "ouro",
+          "sem_farmer": false
         },
         {
-          "posicao": 2,
+          "posicao": 3,
           "id": "guilherme",
           "nome": "Guilherme",
           "faturamento": 169.99,
           "mom_pct": -99.1,
-          "trofeu": "prata"
+          "trofeu": "prata",
+          "sem_farmer": false
         },
         {
-          "posicao": 3,
+          "posicao": 4,
           "id": "vitoria",
           "nome": "Vitória",
           "faturamento": 0.0,
           "mom_pct": null,
-          "trofeu": "bronze"
+          "trofeu": "bronze",
+          "sem_farmer": false
         }
       ],
       "sdr": {
