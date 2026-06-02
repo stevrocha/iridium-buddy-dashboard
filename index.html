@@ -164,6 +164,16 @@
 
   .center-state { display: grid; place-items: center; min-height: 60vh; color: var(--muted); }
   .center-state.err { color: var(--red); }
+
+.month-selector { display: flex; gap: 4px; padding: 3px; border-radius: 10px; margin-left: 6px; }
+.month-selector select { background: transparent; border: 0; color: inherit; font: inherit; font-weight: 600; font-size: 12.5px; padding: 6px 28px 6px 12px; border-radius: 7px; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238B949E' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
+.month-selector select:focus { outline: 1px solid currentColor; outline-offset: 1px; }
+.closed-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; letter-spacing: .04em; text-transform: uppercase; }
+
+.month-selector { background: var(--card); border: 1px solid var(--border); }
+.month-selector select { color: var(--text); }
+.closed-badge { background: rgba(139,148,158,.15); color: var(--muted); }
+
 </style>
 </head>
 <body>
@@ -186,11 +196,30 @@
   const lsKey = 'iridium_dash_marca';
   const marcasKeys = Object.keys(DATA.marcas);
   let activeMarca = localStorage.getItem(lsKey);
+  const lsKeyMes = lsKey + '_mes';
+  let activeMes = localStorage.getItem(lsKeyMes) || 'atual';
   if (!marcasKeys.includes(activeMarca)) activeMarca = marcasKeys[0];
 
   // ====== utils ======
 
   function getProspectsTotal(sdr) { return (sdr && (sdr.prospeccoes_total ?? sdr.leads_no_mes ?? 0)) || 0; }
+
+  function getMesesDisponiveis() {
+    const out = [{ key: 'atual', label: 'Atual · ' + mesNome(DATA.meta.mesReferencia), closed: false }];
+    const hist = DATA.historico || {};
+    const mesesOrd = Object.keys(hist).sort().reverse();
+    mesesOrd.forEach(mes => out.push({ key: mes, label: mesNome(mes) + ' (fechado)', closed: true }));
+    return out;
+  }
+  function getMarcaData() {
+    if (activeMes === 'atual') return DATA.marcas[activeMarca];
+    if (DATA.historico && DATA.historico[activeMes] && DATA.historico[activeMes][activeMarca]) {
+      return DATA.historico[activeMes][activeMarca];
+    }
+    return DATA.marcas[activeMarca]; // fallback
+  }
+  function isMesAtual() { return activeMes === 'atual'; }
+
   function fmtBRL(n) {
     if (n == null) return '—';
     if (Math.abs(n) >= 1e6) return 'R$' + (n / 1e6).toFixed(1).replace('.', ',') + 'M';
@@ -227,7 +256,7 @@
     if (ratio >= 0.6)  return 'var(--orange)';
     return 'var(--red)';
   }
-  function momBadge(p, opts) { if (opts && opts.suppressEarly) { const da = (DATA && DATA.meta && DATA.meta.diaAtual) || 99; if (da <= 3) return '<span class="mom flat">início do mês</span>'; }
+  function momBadge(p, opts) { const isCurrent = (typeof isMesAtual === 'function') ? isMesAtual() : true; const da = (DATA && DATA.meta && DATA.meta.diaAtual) || 99; if (isCurrent && da <= 3) return '<span class="mom flat">início do mês</span>';
     if (p == null) return '<span class="mom flat">novo</span>';
     if (p > 0)     return `<span class="mom up">▲ ${p.toFixed(1).replace('.', ',')}%</span>`;
     if (p < 0)     return `<span class="mom down">▼ ${Math.abs(p).toFixed(1).replace('.', ',')}%</span>`;
@@ -242,7 +271,7 @@
 
   // ====== render ======
   function render() {
-    const m = DATA.marcas[activeMarca];
+    const m = getMarcaData();
     const meta = DATA.meta || {};
 
     $app.innerHTML = `
@@ -253,9 +282,12 @@
             <h1>${escapeHtml(m.name)}</h1>
             <p>Dashboard UGC · Gestão de Creators</p>
           </div>
-          <div class="brand-selector" role="tablist">
-            ${marcasKeys.map(k => `<button data-k="${k}" class="${k===activeMarca?'active':''}">${escapeHtml(DATA.marcas[k].name)}</button>`).join('')}
+          <div class="brand-selector" role="tablist">${marcasKeys.map(k => `<button data-k="${k}" class="${k===activeMarca?'active':''}">${escapeHtml(DATA.marcas[k].name)}</button>`).join('')}</div>
+          <div class="month-selector">
+            <select data-month-select aria-label="Mês de referência">${(typeof getMesesDisponiveis === 'function' ? getMesesDisponiveis() : [{key:'atual',label:'Atual'}]).map(o => `<option value="${o.key}" ${o.key===activeMes?'selected':''}>${escapeHtml(o.label)}</option>`).join('')}</select>
           </div>
+          ${typeof isMesAtual === 'function' && !isMesAtual() ? '<span class="closed-badge">mês fechado · histórico</span>' : ''}
+          
         </div>
         <div class="live">
           <span class="dot"></span>
@@ -497,7 +529,7 @@
               <div class="bar-stack">
                 <div class="bar" style="height:${h}px;background:${f.color}">
                   <div class="bar-value">${fmtBRL(f.faturamento)}</div>
-                  <div class="bar-mom mom ${momClass}">${momTxt}</div>
+                  <div class="bar-mom mom ${typeof momClassEff !== "undefined" ? momClassEff : momClass}">${momTxt}</div>
                 </div>
               </div>
               <div class="bar-label">${escapeHtml(f.nome)}</div>

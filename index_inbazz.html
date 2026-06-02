@@ -152,6 +152,16 @@ body { padding: 24px 28px 60px; }
 .conv-stats .row strong { color: var(--blue-900); font-weight: 700; }
 
 svg text { fill: var(--gray-700); font-family: var(--font-body); font-size: 10.5px; }
+
+.month-selector { display: flex; gap: 4px; padding: 3px; border-radius: 10px; margin-left: 6px; }
+.month-selector select { background: transparent; border: 0; color: inherit; font: inherit; font-weight: 600; font-size: 12.5px; padding: 6px 28px 6px 12px; border-radius: 7px; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238B949E' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
+.month-selector select:focus { outline: 1px solid currentColor; outline-offset: 1px; }
+.closed-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; letter-spacing: .04em; text-transform: uppercase; }
+
+.month-selector { background: var(--blue-100); }
+.month-selector select { color: var(--blue-900); }
+.closed-badge { background: var(--gray-200); color: var(--gray-700); }
+
 </style>
 </head>
 <body>
@@ -179,10 +189,29 @@ svg text { fill: var(--gray-700); font-family: var(--font-body); font-size: 10.5
   const lsKey = 'iridium_inbazz_marca';
   const marcasKeys = Object.keys(DATA.marcas);
   let activeMarca = localStorage.getItem(lsKey);
+  const lsKeyMes = lsKey + '_mes';
+  let activeMes = localStorage.getItem(lsKeyMes) || 'atual';
   if (!marcasKeys.includes(activeMarca)) activeMarca = marcasKeys[0];
 
 
   function getProspectsTotal(sdr) { return (sdr && (sdr.prospeccoes_total ?? sdr.leads_no_mes ?? 0)) || 0; }
+
+  function getMesesDisponiveis() {
+    const out = [{ key: 'atual', label: 'Atual · ' + mesNome(DATA.meta.mesReferencia), closed: false }];
+    const hist = DATA.historico || {};
+    const mesesOrd = Object.keys(hist).sort().reverse();
+    mesesOrd.forEach(mes => out.push({ key: mes, label: mesNome(mes) + ' (fechado)', closed: true }));
+    return out;
+  }
+  function getMarcaData() {
+    if (activeMes === 'atual') return DATA.marcas[activeMarca];
+    if (DATA.historico && DATA.historico[activeMes] && DATA.historico[activeMes][activeMarca]) {
+      return DATA.historico[activeMes][activeMarca];
+    }
+    return DATA.marcas[activeMarca]; // fallback
+  }
+  function isMesAtual() { return activeMes === 'atual'; }
+
   function fmtBRL(n) {
     if (n == null) return '—';
     if (Math.abs(n) >= 1e6) return 'R$' + (n/1e6).toFixed(1).replace('.', ',') + 'M';
@@ -217,7 +246,7 @@ svg text { fill: var(--gray-700); font-family: var(--font-body); font-size: 10.5
     if (ratio >= 0.6)  return 'var(--red-500)';
     return 'var(--red-700)';
   }
-  function momBadge(p, opts) { if (opts && opts.suppressEarly) { const da = (DATA && DATA.meta && DATA.meta.diaAtual) || 99; if (da <= 3) return '<span class="mom flat">início do mês</span>'; }
+  function momBadge(p, opts) { const isCurrent = (typeof isMesAtual === 'function') ? isMesAtual() : true; const da = (DATA && DATA.meta && DATA.meta.diaAtual) || 99; if (isCurrent && da <= 3) return '<span class="mom flat">início do mês</span>';
     if (p == null) return '<span class="mom flat">novo</span>';
     if (p > 0)     return `<span class="mom up">▲ ${p.toFixed(1).replace('.', ',')}%</span>`;
     if (p < 0)     return `<span class="mom down">▼ ${Math.abs(p).toFixed(1).replace('.', ',')}%</span>`;
@@ -226,7 +255,7 @@ svg text { fill: var(--gray-700); font-family: var(--font-body); font-size: 10.5
   function medalIcon(t) { return t==='ouro'?'🏆':t==='prata'?'🥈':t==='bronze'?'🥉':'🎖️'; }
 
   function render() {
-    const m = DATA.marcas[activeMarca];
+    const m = getMarcaData();
     const meta = DATA.meta || {};
 
     $app.innerHTML = `
@@ -237,9 +266,12 @@ svg text { fill: var(--gray-700); font-family: var(--font-body); font-size: 10.5
             <h1>${escapeHtml(m.name)}</h1>
             <p>Dashboard UGC · Gestão de Creators</p>
           </div>
-          <div class="brand-selector" role="tablist">
-            ${marcasKeys.map(k => `<button data-k="${k}" class="${k===activeMarca?'active':''}">${escapeHtml(DATA.marcas[k].name)}</button>`).join('')}
+          <div class="brand-selector" role="tablist">${marcasKeys.map(k => `<button data-k="${k}" class="${k===activeMarca?'active':''}">${escapeHtml(DATA.marcas[k].name)}</button>`).join('')}</div>
+          <div class="month-selector">
+            <select data-month-select aria-label="Mês de referência">${(typeof getMesesDisponiveis === 'function' ? getMesesDisponiveis() : [{key:'atual',label:'Atual'}]).map(o => `<option value="${o.key}" ${o.key===activeMes?'selected':''}>${escapeHtml(o.label)}</option>`).join('')}</select>
           </div>
+          ${typeof isMesAtual === 'function' && !isMesAtual() ? '<span class="closed-badge">mês fechado · histórico</span>' : ''}
+          
         </div>
         <div class="live"><span class="dot"></span><span title="Pipeline roda a cada 4 horas (00/04/08/12/16/20 BRT). Snapshot mais recente abaixo.">Atualizado a cada 4h · último: ${fmtUpdatedAt(meta.geradoEm)}</span></div>
       </div>
@@ -285,6 +317,8 @@ svg text { fill: var(--gray-700); font-family: var(--font-body); font-size: 10.5
     document.querySelectorAll('.brand-selector button').forEach(btn => {
       btn.onclick = () => { activeMarca = btn.dataset.k; localStorage.setItem(lsKey, activeMarca); render(); };
     });
+    const $monthSel = document.querySelector('[data-month-select]');
+    if ($monthSel) $monthSel.onchange = () => { activeMes = $monthSel.value; try { localStorage.setItem(lsKeyMes, activeMes); } catch(e){} render(); };
   }
 
   function renderLineChart(m) {
@@ -370,8 +404,10 @@ svg text { fill: var(--gray-700); font-family: var(--font-body); font-size: 10.5
     return `<div class="bars-grouped">${farmers.map(f=>{
       const h = (f.faturamento/maxV)*(H-50);
       const momClass = f.mom_pct==null?'flat':f.mom_pct>0?'up':f.mom_pct<0?'down':'flat';
-      const momTxt = f.mom_pct==null?'novo':(f.mom_pct>0?'▲ ':'▼ ')+Math.abs(f.mom_pct).toFixed(1).replace('.', ',')+'%';
-      return `<div class="bar-col"><div class="bar-stack"><div class="bar" style="height:${h}px;background:${f.color}"><div class="bar-value">${fmtBRL(f.faturamento)}</div><div class="bar-mom mom ${momClass}">${momTxt}</div></div></div><div class="bar-label">${escapeHtml(f.nome)}</div></div>`;
+      const isCurAndEarly = (typeof isMesAtual === 'function' && isMesAtual() && (DATA.meta.diaAtual||99) <= 3);
+      const momTxt = isCurAndEarly ? 'início' : (f.mom_pct==null?'novo':(f.mom_pct>0?'▲ ':'▼ ')+Math.abs(f.mom_pct).toFixed(1).replace('.', ',')+'%');
+      const momClassEff = isCurAndEarly ? 'flat' : momClass;
+      return `<div class="bar-col"><div class="bar-stack"><div class="bar" style="height:${h}px;background:${f.color}"><div class="bar-value">${fmtBRL(f.faturamento)}</div><div class="bar-mom mom ${typeof momClassEff !== "undefined" ? momClassEff : momClass}">${momTxt}</div></div></div><div class="bar-label">${escapeHtml(f.nome)}</div></div>`;
     }).join('')}</div>`;
   }
 
