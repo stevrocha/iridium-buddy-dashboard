@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-02T15:11:00-03:00",
+    "geradoEm": "2026-06-02T16:30:00-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 3,
     "diasNoMes": 30,
@@ -31,8 +31,14 @@
       "pedidos_total": 36,
       "ticket_medio": 209.34,
       "evolucao_diaria": [
-        { "dia": 1, "realizado_acumulado": 2354.5 },
-        { "dia": 2, "realizado_acumulado": 7536.2 }
+        {
+          "dia": 1,
+          "realizado_acumulado": 2354.5
+        },
+        {
+          "dia": 2,
+          "realizado_acumulado": 7536.2
+        }
       ],
       "farmers": [
         {
@@ -65,14 +71,46 @@
             "dormentes": 196
           },
           "top_creators": [
-            { "username": "adotadasoficial", "name": "Débora", "receita": 4129.3 },
-            { "username": "2dogsemeio", "name": "Paulinne", "receita": 481.1 },
-            { "username": "bernardo_goldenr", "name": "Samantha", "receita": 253.3 },
-            { "username": "ahannahyorkshire", "name": "Giovanna", "receita": 253.3 },
-            { "username": "aslute_kira", "name": "debora", "receita": 253.3 },
-            { "username": "dra_vetnutri", "name": "Érica Vidal", "receita": 253.3 },
-            { "username": "maya_bully22", "name": "fernanda", "receita": 202.3 },
-            { "username": "petsko.nutrivet", "name": "IANA CAROLINE", "receita": 126.65 }
+            {
+              "username": "adotadasoficial",
+              "name": "Débora",
+              "receita": 4129.3
+            },
+            {
+              "username": "2dogsemeio",
+              "name": "Paulinne",
+              "receita": 481.1
+            },
+            {
+              "username": "bernardo_goldenr",
+              "name": "Samantha",
+              "receita": 253.3
+            },
+            {
+              "username": "ahannahyorkshire",
+              "name": "Giovanna",
+              "receita": 253.3
+            },
+            {
+              "username": "aslute_kira",
+              "name": "debora",
+              "receita": 253.3
+            },
+            {
+              "username": "dra_vetnutri",
+              "name": "Érica Vidal",
+              "receita": 253.3
+            },
+            {
+              "username": "maya_bully22",
+              "name": "fernanda",
+              "receita": 202.3
+            },
+            {
+              "username": "petsko.nutrivet",
+              "name": "IANA CAROLINE",
+              "receita": 126.65
+            }
           ]
         },
         {
@@ -105,9 +143,21 @@
             "dormentes": 29
           },
           "top_creators": [
-            { "username": "caramelo_tiao", "name": "Daiane", "receita": 379.1 },
-            { "username": "harrymofadinho", "name": "Giovana", "receita": 253.3 },
-            { "username": "sushijullie", "name": "Carolina", "receita": 75.65 }
+            {
+              "username": "caramelo_tiao",
+              "name": "Daiane",
+              "receita": 379.1
+            },
+            {
+              "username": "harrymofadinho",
+              "name": "Giovana",
+              "receita": 253.3
+            },
+            {
+              "username": "sushijullie",
+              "name": "Carolina",
+              "receita": 75.65
+            }
           ]
         },
         {
@@ -135,6 +185,7 @@
           "afiliados_pool": {
             "total": 0,
             "venderam": 0,
+            "postaram": 0,
             "faturamento": 0.0,
             "pedidos": 0,
             "dormentes": 0
@@ -171,18 +222,62 @@
             "dormentes": 3
           },
           "top_creators": [
-            { "username": "mv.tarsilagalante", "name": "Tarsila", "receita": 268.2 },
-            { "username": "fernandacanova_nutripet", "name": "Fernanda", "receita": 253.3 },
-            { "username": "bitten_anna", "name": "Anna", "receita": 253.3 }
+            {
+              "username": "mv.tarsilagalante",
+              "name": "Tarsila",
+              "receita": 268.2
+            },
+            {
+              "username": "fernandacanova_nutripet",
+              "name": "Fernanda",
+              "receita": 253.3
+            },
+            {
+              "username": "bitten_anna",
+              "name": "Anna",
+              "receita": 253.3
+            }
           ],
           "_sem_farmer": true
         }
       ],
       "ranking_farmers": [
-        { "posicao": 1, "id": "brion", "nome": "Brion", "faturamento": 6053.35, "mom_pct": -86.4, "trofeu": "ouro", "sem_farmer": false },
-        { "posicao": 2, "id": "sem_farmer", "nome": "Sem Farmer", "faturamento": 774.8, "mom_pct": -87.5, "trofeu": null, "sem_farmer": true },
-        { "posicao": 3, "id": "barbara", "nome": "Bárbara", "faturamento": 708.05, "mom_pct": -94.3, "trofeu": "prata", "sem_farmer": false },
-        { "posicao": 4, "id": "gabi", "nome": "Gabriella", "faturamento": 0.0, "mom_pct": -100.0, "trofeu": "bronze", "sem_farmer": false }
+        {
+          "posicao": 1,
+          "id": "brion",
+          "nome": "Brion",
+          "faturamento": 6053.35,
+          "mom_pct": -86.4,
+          "trofeu": "ouro",
+          "sem_farmer": false
+        },
+        {
+          "posicao": 2,
+          "id": "sem_farmer",
+          "nome": "Sem Farmer",
+          "faturamento": 774.8,
+          "mom_pct": -87.5,
+          "trofeu": null,
+          "sem_farmer": true
+        },
+        {
+          "posicao": 3,
+          "id": "barbara",
+          "nome": "Bárbara",
+          "faturamento": 708.05,
+          "mom_pct": -94.3,
+          "trofeu": "prata",
+          "sem_farmer": false
+        },
+        {
+          "posicao": 4,
+          "id": "gabi",
+          "nome": "Gabriella",
+          "faturamento": 0.0,
+          "mom_pct": -100.0,
+          "trofeu": "bronze",
+          "sem_farmer": false
+        }
       ],
       "sdr": {
         "prospeccoes_total": 1,
@@ -216,8 +311,14 @@
       "pedidos_total": 22,
       "ticket_medio": 184.59,
       "evolucao_diaria": [
-        { "dia": 1, "realizado_acumulado": 3006.18 },
-        { "dia": 2, "realizado_acumulado": 4060.97 }
+        {
+          "dia": 1,
+          "realizado_acumulado": 3006.18
+        },
+        {
+          "dia": 2,
+          "realizado_acumulado": 4060.97
+        }
       ],
       "farmers": [
         {
@@ -250,12 +351,36 @@
             "dormentes": 70
           },
           "top_creators": [
-            { "username": "camilepezzin", "name": "Camile", "receita": 535.44 },
-            { "username": "fernandosantoforte", "name": "Fernando", "receita": 452.14 },
-            { "username": "lorenarsn", "name": "Lorena", "receita": 339.97 },
-            { "username": "gabiahnert", "name": "Gabriela", "receita": 250.74 },
-            { "username": "isabelleramalho1", "name": "isabelle", "receita": 118.98 },
-            { "username": "dragiuliamenegon", "name": "Giulia", "receita": 98.6 }
+            {
+              "username": "camilepezzin",
+              "name": "Camile",
+              "receita": 535.44
+            },
+            {
+              "username": "fernandosantoforte",
+              "name": "Fernando",
+              "receita": 452.14
+            },
+            {
+              "username": "lorenarsn",
+              "name": "Lorena",
+              "receita": 339.97
+            },
+            {
+              "username": "gabiahnert",
+              "name": "Gabriela",
+              "receita": 250.74
+            },
+            {
+              "username": "isabelleramalho1",
+              "name": "isabelle",
+              "receita": 118.98
+            },
+            {
+              "username": "dragiuliamenegon",
+              "name": "Giulia",
+              "receita": 98.6
+            }
           ]
         },
         {
@@ -288,9 +413,21 @@
             "dormentes": 52
           },
           "top_creators": [
-            { "username": "felipesart", "name": "Felipe", "receita": 169.99 },
-            { "username": "andreresende20", "name": "André", "receita": 110.49 },
-            { "username": "davibraslavsky", "name": "Davi", "receita": 68.0 }
+            {
+              "username": "felipesart",
+              "name": "Felipe",
+              "receita": 169.99
+            },
+            {
+              "username": "andreresende20",
+              "name": "André",
+              "receita": 110.49
+            },
+            {
+              "username": "davibraslavsky",
+              "name": "Davi",
+              "receita": 68.0
+            }
           ]
         },
         {
@@ -298,7 +435,7 @@
           "nome": "Dario",
           "color": "#A855F7",
           "faturamento": 0.0,
-          "faturamento_m1": 0.0,
+          "faturamento_m1": 0,
           "mom_pct": null,
           "creators_total": 0,
           "creators_que_venderam": 0,
@@ -318,6 +455,7 @@
           "afiliados_pool": {
             "total": 0,
             "venderam": 0,
+            "postaram": 0,
             "faturamento": 0.0,
             "pedidos": 0,
             "dormentes": 0
@@ -354,17 +492,57 @@
             "dormentes": 7
           },
           "top_creators": [
-            { "username": "andressapedrozza", "name": "andressa", "receita": 1559.65 },
-            { "username": "leismanntai", "name": "Tainara Mariana Ferreira", "receita": 356.97 }
+            {
+              "username": "andressapedrozza",
+              "name": "andressa",
+              "receita": 1559.65
+            },
+            {
+              "username": "leismanntai",
+              "name": "Tainara Mariana Ferreira",
+              "receita": 356.97
+            }
           ],
           "_sem_farmer": true
         }
       ],
       "ranking_farmers": [
-        { "posicao": 1, "id": "sem_farmer", "nome": "Sem Farmer", "faturamento": 1916.62, "mom_pct": -90.4, "trofeu": null, "sem_farmer": true },
-        { "posicao": 2, "id": "carol", "nome": "Carol", "faturamento": 1795.87, "mom_pct": -88.9, "trofeu": "ouro", "sem_farmer": false },
-        { "posicao": 3, "id": "guilherme", "nome": "Guilherme", "faturamento": 348.48, "mom_pct": -98.1, "trofeu": "prata", "sem_farmer": false },
-        { "posicao": 4, "id": "dario", "nome": "Dario", "faturamento": 0.0, "mom_pct": null, "trofeu": "bronze", "sem_farmer": false }
+        {
+          "posicao": 1,
+          "id": "sem_farmer",
+          "nome": "Sem Farmer",
+          "faturamento": 1916.62,
+          "mom_pct": -90.4,
+          "trofeu": null,
+          "sem_farmer": true
+        },
+        {
+          "posicao": 2,
+          "id": "carol",
+          "nome": "Carol",
+          "faturamento": 1795.87,
+          "mom_pct": -88.9,
+          "trofeu": "ouro",
+          "sem_farmer": false
+        },
+        {
+          "posicao": 3,
+          "id": "guilherme",
+          "nome": "Guilherme",
+          "faturamento": 348.48,
+          "mom_pct": -98.1,
+          "trofeu": "prata",
+          "sem_farmer": false
+        },
+        {
+          "posicao": 4,
+          "id": "dario",
+          "nome": "Dario",
+          "faturamento": 0.0,
+          "mom_pct": null,
+          "trofeu": "bronze",
+          "sem_farmer": false
+        }
       ],
       "sdr": {
         "prospeccoes_total": 0,
