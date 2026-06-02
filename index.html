@@ -298,65 +298,6 @@
         </div>
       </div>
 
-      <div class="section-label">Visão Geral do Mês</div>
-      <div class="grid row-overview">
-        <div class="card">
-          <h3><span>Evolução — Meta vs Realizado</span></h3>
-          ${renderLineChart(m)}
-        </div>
-        ${renderDonutFat(m)}
-        ${renderDonutCreators('Creators que Venderam', m.creators_que_venderam, m.creators_total, 'Venderam', 'Não vend.', 'green', 'creators (captura conteúdo)')}
-        ${renderDonutCreators('Creators que Postaram', m.creators_que_postaram, m.creators_total, 'Postaram', 'Não post.', 'orange', 'creators (captura conteúdo)')}
-      </div>
-
-      <div class="section-label">Afiliados — Vendas Diretas (sem conteúdo)</div>
-      <div class="grid row-afiliados">
-        <div class="card kpi-card">
-          <h3>Afiliados Ativos</h3>
-          <div class="big" style="color:${m.color}">${m.afiliados_total || 0}</div>
-          <div class="lbl">perfis aprovados que só geram vendas (sem captura de conteúdo)</div>
-          <div class="delta" style="color:var(--muted)">Dormentes: <strong style="color:var(--red)">${m.afiliados_dormentes || 0}</strong></div>
-        </div>
-        ${renderDonutCreators('Afiliados que Venderam', m.afiliados_que_venderam || 0, m.afiliados_total || 0, 'Venderam', 'Não vend.', 'green', 'afiliados')}
-        <div class="card kpi-card">
-          <h3>Faturamento — Split Creator × Afiliado</h3>
-          <div style="display:flex;gap:18px;margin-top:6px;align-items:end">
-            <div style="flex:1">
-              <div class="big" style="font-size:26px;color:var(--green)">${fmtBRL(m.faturamento_creators || 0)}</div>
-              <div class="lbl">Creators · ${m.pedidos_creators || 0} pedidos</div>
-            </div>
-            <div style="flex:1">
-              <div class="big" style="font-size:26px;color:var(--blue)">${fmtBRL(m.faturamento_afiliados || 0)}</div>
-              <div class="lbl">Afiliados · ${m.pedidos_afiliados || 0} pedidos</div>
-            </div>
-          </div>
-          <div class="delta" style="color:var(--muted);margin-top:12px">Total <strong style="color:var(--text)">${fmtBRL(m.faturamento_total)}</strong> · ${m.pedidos_total} pedidos</div>
-        </div>
-      </div>
-
-      <div class="grid row-kpis-extra">
-        <div class="card kpi-card">
-          <h3>Ticket Médio</h3>
-          <div class="big">${fmtBRLfull(m.ticket_medio)}</div>
-          <div class="lbl">${m.pedidos_total} pedidos no mês</div>
-        </div>
-        <div class="card kpi-card bignum-card dorm">
-          <h3>Creators Dormentes</h3>
-          <div class="big" style="color:var(--red)">${m.creators_dormentes}</div>
-          <div class="lbl">creators aprovados há +30d sem venda no mês — oportunidade</div>
-        </div>
-        <div class="card kpi-card">
-          <h3>Conversão de Leads</h3>
-          <div class="big" style="color:${atingimentoColor(m.sdr.conversao_pct/100)}">${pctOne(m.sdr.conversao_pct)}</div>
-          <div class="lbl">${m.sdr.convertidos} de ${getProspectsTotal(m.sdr)} leads converteram</div>
-        </div>
-        <div class="card kpi-card">
-          <h3>Tempo até 1ª Venda</h3>
-          <div class="big">${(m.sdr.dias_medios_1venda || 0).toFixed(1).replace('.', ',')}<span style="font-size:18px;color:var(--muted);margin-left:6px">dias</span></div>
-          <div class="lbl">média dos leads que converteram</div>
-        </div>
-      </div>
-
       <div class="section-label">Performance Individual — Farmers</div>
       <div class="grid row-farmers">
         <div class="card">
@@ -387,6 +328,40 @@
             ${renderPareto(f)}
           </div>
         `).join('')}
+      </div>
+
+      <div class="section-label">Visão Geral do Mês — Creators</div>
+      <div class="grid row-overview">
+        <div class="card">
+          <h3><span>Evolução — Meta vs Realizado</span></h3>
+          ${renderLineChart(m)}
+        </div>
+        ${renderDonutFat(m)}
+        ${renderDonutCreators('Creators que Venderam', m.creators_que_venderam, m.creators_total, 'Venderam', 'Não vend.', 'green', 'creators')}
+        ${renderDonutCreators('Creators que Postaram', m.creators_que_postaram, m.creators_total, 'Postaram', 'Não post.', 'orange', 'creators')}
+      </div>
+
+      <div class="grid row-kpis-extra">
+        <div class="card kpi-card">
+          <h3>Ticket Médio</h3>
+          <div class="big">${fmtBRLfull(m.ticket_medio)}</div>
+          <div class="lbl">${m.pedidos_total} pedidos de creators no mês</div>
+        </div>
+        <div class="card kpi-card bignum-card dorm">
+          <h3>Creators Dormentes</h3>
+          <div class="big" style="color:var(--red)">${m.creators_dormentes}</div>
+          <div class="lbl">creators aprovados há +30d sem venda no mês — oportunidade</div>
+        </div>
+        <div class="card kpi-card">
+          <h3>Conversão de Leads</h3>
+          <div class="big" style="color:${atingimentoColor(m.sdr.conversao_pct/100)}">${pctOne(m.sdr.conversao_pct)}</div>
+          <div class="lbl">${m.sdr.convertidos} de ${getProspectsTotal(m.sdr)} leads converteram</div>
+        </div>
+        <div class="card kpi-card">
+          <h3>Tempo até 1ª Venda</h3>
+          <div class="big">${(m.sdr.dias_medios_1venda || 0).toFixed(1).replace('.', ',')}<span style="font-size:18px;color:var(--muted);margin-left:6px">dias</span></div>
+          <div class="lbl">média dos leads que converteram</div>
+        </div>
       </div>
 
       <div class="section-label">SDR — Prospecção de Novos Creators</div>

@@ -41,10 +41,14 @@ Toda métrica do dashboard separa os 2 pools:
 
 Roberto e Jessica taggam cada `influencer_stores.tags` com o nome do farmer responsável. A scheduled task lê `data/farmers.json` do repo (`farmers_tags` por marca), normaliza (trim+lower) e cruza com as tags do Supabase.
 
-**Buddy**: `brion`, `barbara`, `alice`, `gabi`, `doug`
-**Iridium**: `carol`, `guilherme`, `vitoria`
+**Buddy**: `brion`, `barbara`, `gabi` (display "Gabriella")
+**Iridium**: `carol`, `guilherme`, `dario`
 
 Creator com 2+ tags-farmer vai pro bucket `compartilhado`. Creator sem nenhuma tag-farmer cai no bucket `sem_farmer` — visível no ranking e demais visuais com estilo distinto (cinza, sem trofeu, label "Sem Farmer · pendente Roberto/Jessica"). Isso garante que o total da marca sempre fecha com a soma dos farmers.
+
+## ⚠️ ESCOPO: SÓ CREATORS
+
+Schema v4 — o dashboard mostra **apenas creators** (`profile_groups.tipo='creator'`, i.e. perfis que capturam conteúdo + vendem). **Afiliados não entram**. Toda agregação (totais marca, por farmer, sem_farmer, evolução diária, SDR) filtra por `tipo='creator'`. Removidos do JSON: `afiliados_total`, `afiliados_que_venderam`, `afiliados_dormentes`, `faturamento_afiliados`, `pedidos_afiliados`, `faturamento_creators`, `pedidos_creators`, `creators_pool`, `afiliados_pool`.
 
 ## Fluxo
 
@@ -292,13 +296,11 @@ Schema completo em `../data/dashboard.json` (este repo). Campos:
 - `marca.farmers[].faturamento_m1`, `mom_pct`, `dormentes`, `pedidos`, `ticket_medio`, `top_creators`
 - `marca.ranking_farmers` (array de `{posicao, id, nome, faturamento, mom_pct, trofeu}` — derivado, ordenando farmers por faturamento desc; trofeu: ouro/prata/bronze pras 3 primeiras)
 - `marca.sdr.prospeccoes_total` ⚠️ **NOME CRÍTICO** (não `leads_no_mes`), `meta`, `convertidos`, `conversao_pct`, `dias_medios_1venda` — **leads do mês corrente**, não rolling 30d
-- `marca.farmers[]` inclui bucket `sem_farmer` (id="sem_farmer") quando há perfis sem tag — soma de farmers fecha o total da marca
+- `marca.farmers[]` inclui bucket `sem_farmer` (id="sem_farmer") quando há creators sem tag — soma de farmers fecha o total da marca
 - `marca.ranking_farmers[].sem_farmer = true` sinaliza o bucket sem tag (front renderiza sem trofeu e com aviso pra taggar)
-- `creators_total` = approved da marca com `profile_groups.tipo='creator'` (captura conteúdo)
-- `afiliados_total` = approved da marca com `profile_groups.tipo='afiliado'` (só vendas)
-- `creators_que_venderam`, `creators_que_postaram`, `creators_dormentes`, `faturamento_creators`, `pedidos_creators` — pool de creators
-- `afiliados_que_venderam`, `afiliados_dormentes`, `faturamento_afiliados`, `pedidos_afiliados` — pool de afiliados
-- `faturamento_total` = `faturamento_creators + faturamento_afiliados`
+- `creators_total` = creators approved (`tipo='creator'`) da marca
+- `creators_que_venderam`, `creators_que_postaram`, `creators_dormentes` — todos pool creators
+- `faturamento_total` e `pedidos_total` = só creators (afiliados fora do escopo)
 - `historico` ← preservado da seção 9
 
 Aplicar `farmer_display_names` do `farmers.json` no nome exibido (ex: `barbara` → `Bárbara`).
