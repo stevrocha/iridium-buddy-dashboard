@@ -235,3 +235,7 @@ Abrir `https://<dominio-amplify>/data/dashboard.json` e checar:
 - Tags são plain text livre. Se Roberto/Jessica criarem tag nova (ex: novo farmer "Pedro"), basta adicionar `pedro` em `farmers.json → marcas.buddy.farmers_tags` + `farmer_display_names`. Próxima execução pega automaticamente.
 - Variações de case (`Guilherme` vs `guilherme`) e espaços extras (`Guilherme `) são deduplicados via `trim+lower`.
 - Tags como `prospect vic`, `PRP Junior`, `Creator`, `Embaixadores`, `Top Influencer`, `Vet Afiliado`, `Campanha Aberta`, etc. **não são farmers** — são status, categorias ou campanhas. Ignorar.
+
+
+## ⚠️ Schema SDR — campo crítico
+O frontend espera `sdr.prospeccoes_total` (não `sdr.leads_no_mes`). Sempre gere o JSON com o nome **`prospeccoes_total`**. PROSPECCOES_TOTAL_FIELD_NAME = "prospeccoes_total".
