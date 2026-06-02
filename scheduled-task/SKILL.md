@@ -186,20 +186,57 @@ WHERE s.receita > 0;
 -- filtra rank <= 8 em código
 ```
 
-### 9. Montar JSON
+### 9. PRESERVAR HISTÓRICO ANTES DE MONTAR JSON NOVO ⚠️ **CRÍTICO**
 
-Schema completo em `../data/dashboard.json` (este repo). Os campos novos vs versão anterior:
+Antes de gerar o JSON novo, **leia o `data/dashboard.json` atual do repo** (via raw GitHub ou clone local):
+
+```
+GET https://raw.githubusercontent.com/stevrocha/iridium-buddy-dashboard/main/data/dashboard.json
+```
+
+Extraia 2 coisas:
+- `historico` (objeto com snapshots de meses passados — pode estar vazio na 1ª vez)
+- `meta.mesReferencia` antigo (ex: `"2026-06"`)
+
+**Lógica de preservação:**
+
+1. **Se o mês virou** (`mes_antigo != mes_corrente`):
+   - O JSON atual representa um mês recém-fechado. Mova `marcas` antigo pra `historico[mes_antigo]` com flag `_closed: true` em cada marca.
+   - Comece a contagem do mês novo do zero.
+2. **Se mesmo mês** (`mes_antigo == mes_corrente`):
+   - Só preserve `historico` como veio (não acrescenta nada). Os dados de `marcas` são sobrescritos com o snapshot fresh.
+
+**Sempre**: `historico` é cumulativo — NUNCA deletar entradas antigas dele.
+
+```pseudocode
+old_json = fetch(raw github dashboard.json)
+historico = old_json.historico || {}
+
+if old_json.meta.mesReferencia != mes_corrente:
+  # Mês virou — congelar o mês anterior
+  snapshot_marcas = deepcopy(old_json.marcas)
+  for mk in snapshot_marcas:
+    snapshot_marcas[mk]._closed = True
+  historico[old_json.meta.mesReferencia] = snapshot_marcas
+
+new_json.historico = historico   # SEMPRE inclui no novo JSON
+```
+
+### 10. Montar JSON
+
+Schema completo em `../data/dashboard.json` (este repo). Campos:
 
 - `marca.faturamento_m1`, `marca.mom_pct`
 - `marca.creators_dormentes`, `marca.pedidos_total`, `marca.ticket_medio`
-- `marca.farmers[].faturamento_m1`, `mom_pct`, `dormentes`, `pedidos`, `ticket_medio`
-- `marca.ranking_farmers` (array de `{posicao, id, nome, faturamento, mom_pct, trofeu}` — derivado, ordenando farmers por faturamento desc; trofeu: ouro/prata/bronze pras 3 primeiras posições)
-- `marca.sdr.convertidos`, `conversao_pct`, `dias_medios_1venda`
-- Renomeou: `creators_total` agora reflete TODOS os approved da marca (não só os com farmer)
+- `marca.farmers[].faturamento_m1`, `mom_pct`, `dormentes`, `pedidos`, `ticket_medio`, `top_creators`
+- `marca.ranking_farmers` (array de `{posicao, id, nome, faturamento, mom_pct, trofeu}` — derivado, ordenando farmers por faturamento desc; trofeu: ouro/prata/bronze pras 3 primeiras)
+- `marca.sdr.prospeccoes_total` ⚠️ **NOME CRÍTICO** (não `leads_no_mes`), `meta`, `convertidos`, `conversao_pct`, `dias_medios_1venda`
+- `creators_total` = TODOS os approved da marca (não só os com farmer)
+- `historico` ← preservado da seção 9
 
 Aplicar `farmer_display_names` do `farmers.json` no nome exibido (ex: `barbara` → `Bárbara`).
 
-### 10. Commit via PAT
+### 11. Commit via PAT
 
 ```
 PUT /repos/stevrocha/iridium-buddy-dashboard/contents/data/dashboard.json
@@ -214,7 +251,7 @@ Authorization: Bearer <PAT>
 
 PAT em `~/.claude/secrets/github_pat_iridium.md`.
 
-### 11. Logs e resilience
+### 12. Logs e resilience
 
 - Se uma marca falhar (timeout, query error), **mantém os dados antigos daquela marca** no JSON.
 - Logar: tempo total, contagem de creators/farmers, IDs sem farmer (alerta pra Roberto/Jessica).
