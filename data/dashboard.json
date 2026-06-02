@@ -1,8 +1,8 @@
 {
   "meta": {
-    "geradoEm": "2026-06-01T21:26:49-03:00",
+    "geradoEm": "2026-06-01T21:38:33-03:00",
     "mesReferencia": "2026-06",
-    "schemaVersion": 2,
+    "schemaVersion": 3,
     "diasNoMes": 30,
     "diaAtual": 1
   },
@@ -16,10 +16,18 @@
       "faturamento_total": 2101.2,
       "faturamento_m1": 63357.67,
       "mom_pct": -96.7,
-      "creators_total": 346,
-      "creators_que_venderam": 9,
+      "creators_total": 102,
+      "afiliados_total": 244,
+      "total_aprovados": 346,
+      "creators_que_venderam": 4,
       "creators_que_postaram": 11,
-      "creators_dormentes": 316,
+      "afiliados_que_venderam": 5,
+      "creators_dormentes": 86,
+      "afiliados_dormentes": 230,
+      "faturamento_creators": 1139.0,
+      "faturamento_afiliados": 962.2,
+      "pedidos_creators": 5,
+      "pedidos_afiliados": 5,
       "pedidos_total": 10,
       "ticket_medio": 210.12,
       "evolucao_diaria": [
@@ -43,6 +51,21 @@
           "dormentes": 231,
           "pedidos": 6,
           "ticket_medio": 202.58,
+          "creators_pool": {
+            "total": 34,
+            "venderam": 1,
+            "postaram": 6,
+            "faturamento": 253.3,
+            "pedidos": 1,
+            "dormentes": 33
+          },
+          "afiliados_pool": {
+            "total": 203,
+            "venderam": 5,
+            "faturamento": 962.2,
+            "pedidos": 5,
+            "dormentes": 198
+          },
           "top_creators": [
             {
               "username": "2dogsemeio",
@@ -86,10 +109,25 @@
           "creators_total": 83,
           "creators_que_venderam": 2,
           "creators_que_postaram": 4,
-          "leads_no_mes": 2,
+          "leads_no_mes": 0,
           "dormentes": 79,
           "pedidos": 3,
           "ticket_medio": 210.8,
+          "creators_pool": {
+            "total": 54,
+            "venderam": 2,
+            "postaram": 4,
+            "faturamento": 632.4,
+            "pedidos": 3,
+            "dormentes": 50
+          },
+          "afiliados_pool": {
+            "total": 29,
+            "venderam": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 29
+          },
           "top_creators": [
             {
               "username": "caramelo_tiao",
@@ -117,6 +155,21 @@
           "dormentes": 0,
           "pedidos": 0,
           "ticket_medio": 0,
+          "creators_pool": {
+            "total": 0,
+            "venderam": 0,
+            "postaram": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
+          "afiliados_pool": {
+            "total": 0,
+            "venderam": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
           "top_creators": []
         },
         {
@@ -129,10 +182,25 @@
           "creators_total": 9,
           "creators_que_venderam": 0,
           "creators_que_postaram": 1,
-          "leads_no_mes": 9,
+          "leads_no_mes": 0,
           "dormentes": 0,
           "pedidos": 0,
           "ticket_medio": 0,
+          "creators_pool": {
+            "total": 9,
+            "venderam": 0,
+            "postaram": 1,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
+          "afiliados_pool": {
+            "total": 0,
+            "venderam": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
           "top_creators": []
         },
         {
@@ -149,6 +217,21 @@
           "dormentes": 0,
           "pedidos": 0,
           "ticket_medio": 0,
+          "creators_pool": {
+            "total": 0,
+            "venderam": 0,
+            "postaram": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
+          "afiliados_pool": {
+            "total": 0,
+            "venderam": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
           "top_creators": []
         }
       ],
@@ -195,11 +278,11 @@
         }
       ],
       "sdr": {
-        "prospeccoes_total": 21,
+        "prospeccoes_total": 1,
         "meta": 30,
-        "convertidos": 2,
-        "conversao_pct": 9.5,
-        "dias_medios_1venda": 3.0
+        "convertidos": 0,
+        "conversao_pct": 0.0,
+        "dias_medios_1venda": 0.0
       }
     },
     "iridium": {
@@ -208,19 +291,27 @@
       "logoEmoji": "⚡",
       "color": "#A855F7",
       "meta_mensal": 70000,
-      "faturamento_total": 2547.22,
+      "faturamento_total": 2827.7,
       "faturamento_m1": 54682.61,
-      "mom_pct": -95.3,
-      "creators_total": 233,
-      "creators_que_venderam": 6,
-      "creators_que_postaram": 21,
-      "creators_dormentes": 213,
-      "pedidos_total": 11,
-      "ticket_medio": 231.57,
+      "mom_pct": -94.8,
+      "creators_total": 96,
+      "afiliados_total": 137,
+      "total_aprovados": 233,
+      "creators_que_venderam": 2,
+      "creators_que_postaram": 22,
+      "afiliados_que_venderam": 4,
+      "creators_dormentes": 82,
+      "afiliados_dormentes": 131,
+      "faturamento_creators": 705.43,
+      "faturamento_afiliados": 2122.27,
+      "pedidos_creators": 3,
+      "pedidos_afiliados": 10,
+      "pedidos_total": 13,
+      "ticket_medio": 217.52,
       "evolucao_diaria": [
         {
           "dia": 1,
-          "realizado_acumulado": 2547.22
+          "realizado_acumulado": 2827.7
         }
       ],
       "farmers": [
@@ -234,10 +325,25 @@
           "creators_total": 111,
           "creators_que_venderam": 3,
           "creators_que_postaram": 9,
-          "leads_no_mes": 3,
+          "leads_no_mes": 0,
           "dormentes": 105,
           "pedidos": 5,
           "ticket_medio": 247.66,
+          "creators_pool": {
+            "total": 37,
+            "venderam": 1,
+            "postaram": 9,
+            "faturamento": 535.44,
+            "pedidos": 2,
+            "dormentes": 33
+          },
+          "afiliados_pool": {
+            "total": 74,
+            "venderam": 2,
+            "faturamento": 702.88,
+            "pedidos": 3,
+            "dormentes": 72
+          },
           "top_creators": [
             {
               "username": "camilepezzin",
@@ -265,11 +371,26 @@
           "mom_pct": -99.1,
           "creators_total": 110,
           "creators_que_venderam": 1,
-          "creators_que_postaram": 11,
-          "leads_no_mes": 8,
+          "creators_que_postaram": 12,
+          "leads_no_mes": 0,
           "dormentes": 101,
           "pedidos": 1,
           "ticket_medio": 169.99,
+          "creators_pool": {
+            "total": 58,
+            "venderam": 1,
+            "postaram": 12,
+            "faturamento": 169.99,
+            "pedidos": 1,
+            "dormentes": 49
+          },
+          "afiliados_pool": {
+            "total": 52,
+            "venderam": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 52
+          },
           "top_creators": [
             {
               "username": "felipesart",
@@ -292,6 +413,21 @@
           "dormentes": 0,
           "pedidos": 0,
           "ticket_medio": 0,
+          "creators_pool": {
+            "total": 0,
+            "venderam": 0,
+            "postaram": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
+          "afiliados_pool": {
+            "total": 0,
+            "venderam": 0,
+            "faturamento": 0.0,
+            "pedidos": 0,
+            "dormentes": 0
+          },
           "top_creators": []
         }
       ],
@@ -322,11 +458,11 @@
         }
       ],
       "sdr": {
-        "prospeccoes_total": 14,
+        "prospeccoes_total": 0,
         "meta": 25,
-        "convertidos": 4,
-        "conversao_pct": 28.6,
-        "dias_medios_1venda": 9.8
+        "convertidos": 0,
+        "conversao_pct": 0.0,
+        "dias_medios_1venda": 0.0
       }
     }
   },

@@ -16,6 +16,27 @@ Buddy Nutrition  = 1dedd6dc-b11a-448b-9bb8-cf4865237bf8
 Iridium Labs     = a688853e-24e2-4eb2-b2b9-e69545aeafc7
 ```
 
+## ⚠️ Creator vs Afiliado — definido pelo grupo
+
+Cada `influencer_stores.group_id` aponta pra um registro em `profile_groups`. A regra que separa **creator** (captura conteúdo + vendas) de **afiliado** (só vendas):
+
+```sql
+CASE
+  WHEN lower(pg.name) LIKE '%afiliado%'
+    OR lower(pg.description) LIKE '%não captura post%'
+    OR lower(pg.description) LIKE '%nao captura post%'
+  THEN 'afiliado'
+  ELSE 'creator'
+END
+```
+
+Os 4 grupos relevantes hoje: `Creator` (captura tudo), `Afiliado` (não captura post), `Vet Afiliado` (não captura), `Expert` (captura — perfis pagos). Sem flag = trata como creator.
+
+Toda métrica do dashboard separa os 2 pools:
+- `creators_total`, `creators_que_venderam`, `creators_que_postaram`, `creators_dormentes`, `faturamento_creators`, `pedidos_creators`
+- `afiliados_total`, `afiliados_que_venderam`, `afiliados_dormentes`, `faturamento_afiliados`, `pedidos_afiliados`
+- `faturamento_total` e `pedidos_total` = soma dos dois pools.
+
 ## Mapping farmer ← tag (do farmers.json)
 
 Roberto e Jessica taggam cada `influencer_stores.tags` com o nome do farmer responsável. A scheduled task lê `data/farmers.json` do repo (`farmers_tags` por marca), normaliza (trim+lower) e cruza com as tags do Supabase.
@@ -48,29 +69,41 @@ diasNoMes = monthrange(hoje.year, hoje.month)[1]
 diaAtual = hoje.day
 ```
 
-### 3. Master query — agregado por farmer (mês corrente)
+### 3. Master query — agregado por farmer × tipo (mês corrente)
 
-Substituir `{FARMER_TAGS}` na CTE inicial pelas tags da marca.
+Inclui classificação creator/afiliado via `profile_groups`.
 
 ```sql
-WITH farmer_tags AS (
+WITH grupo_classif AS (
+  SELECT id,
+    CASE
+      WHEN lower(name) LIKE '%afiliado%'
+        OR lower(description) LIKE '%não captura post%'
+        OR lower(description) LIKE '%nao captura post%'
+      THEN 'afiliado' ELSE 'creator'
+    END AS tipo
+  FROM profile_groups WHERE deleted_at IS NULL
+),
+farmer_tags AS (
   SELECT '1dedd6dc-b11a-448b-9bb8-cf4865237bf8'::uuid AS store_id, unnest(ARRAY['brion','barbara','alice','gabi','doug']) AS farmer_tag
   UNION ALL
   SELECT 'a688853e-24e2-4eb2-b2b9-e69545aeafc7'::uuid AS store_id, unnest(ARRAY['carol','guilherme','vitoria']) AS farmer_tag
 ),
 creator_farmers AS (
-  SELECT ins.store_id, ins.influencer_id, ins.approved_at,
+  SELECT ins.store_id, ins.influencer_id, ins.approved_at, ins.group_id,
     array_agg(DISTINCT ft.farmer_tag) AS farmer_tags
   FROM influencer_stores ins
   JOIN unnest(ins.tags) AS raw_tag ON true
   JOIN farmer_tags ft ON ft.store_id = ins.store_id AND ft.farmer_tag = lower(trim(raw_tag))
   WHERE ins.deleted_at IS NULL AND ins.removed_at IS NULL AND ins.status = 'approved'
-  GROUP BY ins.store_id, ins.influencer_id, ins.approved_at
+  GROUP BY ins.store_id, ins.influencer_id, ins.approved_at, ins.group_id
 ),
-creator_buckets AS (
-  SELECT store_id, influencer_id, approved_at,
-    CASE WHEN array_length(farmer_tags, 1) = 1 THEN farmer_tags[1] ELSE 'compartilhado' END AS farmer_bucket
-  FROM creator_farmers
+buckets AS (
+  SELECT cf.store_id, cf.influencer_id, cf.approved_at,
+    COALESCE(gc.tipo,'creator') AS tipo,
+    CASE WHEN array_length(cf.farmer_tags,1)=1 THEN cf.farmer_tags[1] ELSE 'compartilhado' END AS farmer_bucket
+  FROM creator_farmers cf
+  LEFT JOIN grupo_classif gc ON gc.id = cf.group_id
 ),
 sales_mes AS (
   SELECT store_id, influencer_id, SUM(daily_valor_pago) AS receita, SUM(daily_total_vendas) AS pedidos
@@ -82,19 +115,21 @@ posts_mes AS (
   SELECT DISTINCT store_id, influencer_id FROM mv_creator_daily_posts
   WHERE post_day >= '{MES_INI}' AND post_day < '{MES_FIM}' AND daily_total_posts > 0
 )
-SELECT cb.store_id, cb.farmer_bucket,
-  COUNT(DISTINCT cb.influencer_id) AS creators_total,
-  COUNT(DISTINCT CASE WHEN s.receita > 0 THEN cb.influencer_id END) AS creators_venderam,
-  COUNT(DISTINCT p.influencer_id) AS creators_postaram,
+SELECT b.store_id, b.farmer_bucket, b.tipo,
+  COUNT(DISTINCT b.influencer_id) AS total,
+  COUNT(DISTINCT CASE WHEN s.receita > 0 THEN b.influencer_id END) AS venderam,
+  COUNT(DISTINCT p.influencer_id) AS postaram,
   COALESCE(SUM(s.receita), 0) AS faturamento,
   COALESCE(SUM(s.pedidos), 0) AS pedidos,
-  COUNT(DISTINCT CASE WHEN cb.approved_at >= NOW() - INTERVAL '30 days' THEN cb.influencer_id END) AS leads_30d,
-  COUNT(DISTINCT CASE WHEN cb.approved_at < NOW() - INTERVAL '30 days' AND (s.receita IS NULL OR s.receita = 0) THEN cb.influencer_id END) AS dormentes
-FROM creator_buckets cb
-LEFT JOIN sales_mes s ON s.store_id = cb.store_id AND s.influencer_id = cb.influencer_id
-LEFT JOIN posts_mes p ON p.store_id = cb.store_id AND p.influencer_id = cb.influencer_id
-GROUP BY cb.store_id, cb.farmer_bucket;
+  COUNT(DISTINCT CASE WHEN b.approved_at >= '{MES_INI}' AND b.approved_at < '{MES_FIM}' THEN b.influencer_id END) AS leads_mes,
+  COUNT(DISTINCT CASE WHEN b.approved_at < NOW() - INTERVAL '30 days' AND (s.receita IS NULL OR s.receita = 0) THEN b.influencer_id END) AS dormentes
+FROM buckets b
+LEFT JOIN sales_mes s ON s.store_id = b.store_id AND s.influencer_id = b.influencer_id
+LEFT JOIN posts_mes p ON p.store_id = b.store_id AND p.influencer_id = b.influencer_id
+GROUP BY b.store_id, b.farmer_bucket, b.tipo;
 ```
+
+⚠️ `leads_mes` = `approved_at` dentro do mês corrente (mês de calendário, **não** janela rolante 30d). O label do front é "Prospecções **no mês**".
 
 ### 4. MoM — mesma query com janela M-1
 
@@ -230,8 +265,12 @@ Schema completo em `../data/dashboard.json` (este repo). Campos:
 - `marca.creators_dormentes`, `marca.pedidos_total`, `marca.ticket_medio`
 - `marca.farmers[].faturamento_m1`, `mom_pct`, `dormentes`, `pedidos`, `ticket_medio`, `top_creators`
 - `marca.ranking_farmers` (array de `{posicao, id, nome, faturamento, mom_pct, trofeu}` — derivado, ordenando farmers por faturamento desc; trofeu: ouro/prata/bronze pras 3 primeiras)
-- `marca.sdr.prospeccoes_total` ⚠️ **NOME CRÍTICO** (não `leads_no_mes`), `meta`, `convertidos`, `conversao_pct`, `dias_medios_1venda`
-- `creators_total` = TODOS os approved da marca (não só os com farmer)
+- `marca.sdr.prospeccoes_total` ⚠️ **NOME CRÍTICO** (não `leads_no_mes`), `meta`, `convertidos`, `conversao_pct`, `dias_medios_1venda` — **leads do mês corrente**, não rolling 30d
+- `creators_total` = approved da marca com `profile_groups.tipo='creator'` (captura conteúdo)
+- `afiliados_total` = approved da marca com `profile_groups.tipo='afiliado'` (só vendas)
+- `creators_que_venderam`, `creators_que_postaram`, `creators_dormentes`, `faturamento_creators`, `pedidos_creators` — pool de creators
+- `afiliados_que_venderam`, `afiliados_dormentes`, `faturamento_afiliados`, `pedidos_afiliados` — pool de afiliados
+- `faturamento_total` = `faturamento_creators + faturamento_afiliados`
 - `historico` ← preservado da seção 9
 
 Aplicar `farmer_display_names` do `farmers.json` no nome exibido (ex: `barbara` → `Bárbara`).
