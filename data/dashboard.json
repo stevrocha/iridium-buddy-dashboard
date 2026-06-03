@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-03T09:08:12-03:00",
+    "geradoEm": "2026-06-03T09:16:43-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 3,
     "diasNoMes": 30,
@@ -224,7 +224,28 @@
             "pedidos": 1,
             "dormentes": 3
           },
-          "top_creators": [],
+          "top_creators": [
+            {
+              "username": "mv.tarsilagalante",
+              "name": "Tarsila",
+              "receita": 268.2
+            },
+            {
+              "username": "fernandacanova_nutripet",
+              "name": "Fernanda",
+              "receita": 253.3
+            },
+            {
+              "username": "juhirai.fisiovet",
+              "name": "Juliana",
+              "receita": 253.3
+            },
+            {
+              "username": "bitten_anna",
+              "name": "Anna",
+              "receita": 253.3
+            }
+          ],
           "_sem_farmer": true
         }
       ],
@@ -496,7 +517,18 @@
             "pedidos": 14,
             "dormentes": 7
           },
-          "top_creators": [],
+          "top_creators": [
+            {
+              "username": "andressapedrozza",
+              "name": "andressa",
+              "receita": 1925.12
+            },
+            {
+              "username": "leismanntai",
+              "name": "Tainara Mariana Ferreira",
+              "receita": 592.4
+            }
+          ],
           "_sem_farmer": true
         }
       ],
