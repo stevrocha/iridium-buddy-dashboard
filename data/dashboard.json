@@ -31,13 +31,11 @@
           "creators_total": 54,
           "creators_que_venderam": 3,
           "creators_que_postaram": 7,
-          "creators_dormentes": 49,
           "faturamento": 1154.3,
           "faturamento_m1": 12193.5,
           "mom_pct": -90.5,
           "pedidos": 6,
           "ticket_medio": 192.38,
-          "leads_mes": 0,
           "top_creators": [
             {
               "username": "harrymofadinho",
@@ -57,7 +55,9 @@
               "receita": 75.65,
               "pedidos": 1
             }
-          ]
+          ],
+          "leads_no_mes": 0,
+          "dormentes": 49
         },
         {
           "id": "brion",
@@ -66,13 +66,11 @@
           "creators_total": 34,
           "creators_que_venderam": 4,
           "creators_que_postaram": 9,
-          "creators_dormentes": 30,
           "faturamento": 1139.85,
           "faturamento_m1": 17614.77,
           "mom_pct": -93.5,
           "pedidos": 5,
           "ticket_medio": 227.97,
-          "leads_mes": 0,
           "top_creators": [
             {
               "username": "velma.border",
@@ -98,7 +96,9 @@
               "receita": 126.65,
               "pedidos": 1
             }
-          ]
+          ],
+          "leads_no_mes": 0,
+          "dormentes": 30
         },
         {
           "id": "gabi",
@@ -107,14 +107,14 @@
           "creators_total": 9,
           "creators_que_venderam": 0,
           "creators_que_postaram": 4,
-          "creators_dormentes": 0,
           "faturamento": 0.0,
           "faturamento_m1": 330.22,
           "mom_pct": -100.0,
           "pedidos": 0,
           "ticket_medio": 0.0,
-          "leads_mes": 0,
-          "top_creators": []
+          "top_creators": [],
+          "leads_no_mes": 0,
+          "dormentes": 0
         },
         {
           "id": "sem_farmer",
@@ -124,13 +124,11 @@
           "creators_total": 5,
           "creators_que_venderam": 3,
           "creators_que_postaram": 0,
-          "creators_dormentes": 1,
           "faturamento": 835.55,
           "faturamento_m1": 6202.47,
           "mom_pct": -86.5,
           "pedidos": 4,
           "ticket_medio": 208.89,
-          "leads_mes": 1,
           "top_creators": [
             {
               "username": "fernandacanova_nutripet",
@@ -150,7 +148,9 @@
               "receita": 253.3,
               "pedidos": 1
             }
-          ]
+          ],
+          "leads_no_mes": 1,
+          "dormentes": 1
         }
       ],
       "ranking_farmers": [
@@ -234,13 +234,11 @@
           "creators_total": 38,
           "creators_que_venderam": 2,
           "creators_que_postaram": 17,
-          "creators_dormentes": 32,
           "faturamento": 947.64,
           "faturamento_m1": 14006.19,
           "mom_pct": -93.2,
           "pedidos": 5,
           "ticket_medio": 189.53,
-          "leads_mes": 0,
           "top_creators": [
             {
               "username": "camilepezzin",
@@ -254,7 +252,9 @@
               "receita": 118.98,
               "pedidos": 1
             }
-          ]
+          ],
+          "leads_no_mes": 0,
+          "dormentes": 32
         },
         {
           "id": "guilherme",
@@ -263,13 +263,11 @@
           "creators_total": 58,
           "creators_que_venderam": 6,
           "creators_que_postaram": 19,
-          "creators_dormentes": 44,
           "faturamento": 616.22,
           "faturamento_m1": 16779.63,
           "mom_pct": -96.3,
           "pedidos": 6,
           "ticket_medio": 102.7,
-          "leads_mes": 0,
           "top_creators": [
             {
               "username": "felipesart",
@@ -307,7 +305,9 @@
               "receita": 38.25,
               "pedidos": 1
             }
-          ]
+          ],
+          "leads_no_mes": 0,
+          "dormentes": 44
         }
       ],
       "ranking_farmers": [
