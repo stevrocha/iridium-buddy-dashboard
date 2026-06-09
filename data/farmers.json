@@ -1,0 +1,55 @@
+{
+  "_doc": "Lista canonica de farmers por marca + metas. O mapping creator <-> farmer vem das tags em influencer_stores no Supabase (Roberto e Jessica definem). A scheduled task normaliza (trim + lowercase) e cruza com farmers_tags abaixo. ESCOPO: só creators (profile_groups.tipo='creator'). Afiliados não entram no dashboard.",
+  "_doc_buckets": "Creator com 2+ tags-farmer vai pro bucket 'compartilhado' (visivel separado no dashboard). Creator sem nenhuma tag-farmer cai no bucket 'sem_farmer' (renderizado distinto, sem trofeu, com aviso pra Roberto/Jessica taggar).",
+
+  "marcas": {
+    "buddy": {
+      "store_id": "1dedd6dc-b11a-448b-9bb8-cf4865237bf8",
+      "name": "Buddy Nutrition",
+      "logoEmoji": "🐾",
+      "farmers_tags": ["brion", "barbara", "gabi"],
+      "farmer_display_names": {
+        "brion": "Brion",
+        "barbara": "Bárbara",
+        "gabi": "Gabriella"
+      }
+    },
+    "iridium": {
+      "store_id": "a688853e-24e2-4eb2-b2b9-e69545aeafc7",
+      "name": "Iridium Labs",
+      "logoEmoji": "⚡",
+      "farmers_tags": ["carol", "guilherme", "dario"],
+      "farmer_display_names": {
+        "carol": "Carol",
+        "guilherme": "Guilherme",
+        "dario": "Dario"
+      }
+    }
+  },
+
+  "metas_mensais": {
+    "_doc": "Meta de faturamento em reais (BRL) por marca por mes (YYYY-MM). Edite aqui mensalmente.",
+    "buddy": {
+      "2026-06": 80000,
+      "2026-05": 80000,
+      "2026-04": 80000
+    },
+    "iridium": {
+      "2026-06": 70000,
+      "2026-05": 70000,
+      "2026-04": 70000
+    }
+  },
+
+  "metas_sdr": {
+    "_doc": "Meta de leads novos (creators aprovados no mes corrente) por marca por mes.",
+    "buddy": {
+      "2026-06": 30,
+      "2026-05": 30
+    },
+    "iridium": {
+      "2026-06": 25,
+      "2026-05": 25
+    }
+  }
+}
