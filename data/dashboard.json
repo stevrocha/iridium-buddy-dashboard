@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-18T09:49:51-03:00",
+    "geradoEm": "2026-06-18T09:55:25-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 3,
     "diasNoMes": 30,
@@ -111,7 +111,7 @@
           "color": "#3B82F6",
           "faturamento": 75795.27,
           "faturamento_m1": 43721.98,
-          "mom_pct": 73.4,
+          "mom_pct": 73.36,
           "creators_total": 237,
           "creators_que_venderam": 37,
           "creators_que_postaram": 19,
@@ -183,7 +183,7 @@
           "color": "#EC4899",
           "faturamento": 8221.49,
           "faturamento_m1": 12446.8,
-          "mom_pct": -33.9,
+          "mom_pct": -33.95,
           "creators_total": 81,
           "creators_que_venderam": 11,
           "creators_que_postaram": 23,
@@ -255,7 +255,7 @@
           "color": "#F59E0B",
           "faturamento": 253.3,
           "faturamento_m1": 330.22,
-          "mom_pct": -23.3,
+          "mom_pct": -23.29,
           "creators_total": 18,
           "creators_que_venderam": 1,
           "creators_que_postaram": 8,
@@ -292,7 +292,7 @@
           "color": "#6B7280",
           "faturamento": 5143.68,
           "faturamento_m1": 6202.47,
-          "mom_pct": -17.1,
+          "mom_pct": -17.07,
           "creators_total": 17,
           "creators_que_venderam": 6,
           "creators_que_postaram": 3,
@@ -315,7 +315,38 @@
             "pedidos": 2,
             "dormentes": 9
           },
-          "top_creators": [],
+          "top_creators": [
+            {
+              "username": "bitten_anna",
+              "name": "Anna",
+              "receita": 2274.93
+            },
+            {
+              "username": "fernandacanova_nutripet",
+              "name": "Fernanda",
+              "receita": 2088.05
+            },
+            {
+              "username": "mv.tarsilagalante",
+              "name": "Tarsila",
+              "receita": 268.2
+            },
+            {
+              "username": "juhirai.fisiovet",
+              "name": "Juliana",
+              "receita": 253.3
+            },
+            {
+              "username": "marcela.barbieri",
+              "name": "marcela",
+              "receita": 134.1
+            },
+            {
+              "username": "vetnat.nutricaoanimal",
+              "name": "Natalia",
+              "receita": 125.1
+            }
+          ],
           "_sem_farmer": true
         }
       ],
@@ -325,7 +356,7 @@
           "id": "brion",
           "nome": "Brion",
           "faturamento": 75795.27,
-          "mom_pct": 73.4,
+          "mom_pct": 73.36,
           "trofeu": "ouro",
           "sem_farmer": false
         },
@@ -334,7 +365,7 @@
           "id": "barbara",
           "nome": "Bárbara",
           "faturamento": 8221.49,
-          "mom_pct": -33.9,
+          "mom_pct": -33.95,
           "trofeu": "prata",
           "sem_farmer": false
         },
@@ -343,7 +374,7 @@
           "id": "sem_farmer",
           "nome": "Sem Farmer",
           "faturamento": 5143.68,
-          "mom_pct": -17.1,
+          "mom_pct": -17.07,
           "trofeu": null,
           "sem_farmer": true
         },
@@ -352,7 +383,7 @@
           "id": "gabi",
           "nome": "Gabriella",
           "faturamento": 253.3,
-          "mom_pct": -23.3,
+          "mom_pct": -23.29,
           "trofeu": "bronze",
           "sem_farmer": false
         }
@@ -373,7 +404,7 @@
       "meta_mensal": 70000,
       "faturamento_total": 27687.1,
       "faturamento_m1": 54682.61,
-      "mom_pct": -49.4,
+      "mom_pct": -49.37,
       "creators_total": 112,
       "afiliados_total": 139,
       "total_aprovados": 251,
@@ -469,7 +500,7 @@
           "color": "#EF4444",
           "faturamento": 10822.52,
           "faturamento_m1": 16212.53,
-          "mom_pct": -33.2,
+          "mom_pct": -33.25,
           "creators_total": 112,
           "creators_que_venderam": 21,
           "creators_que_postaram": 29,
@@ -678,7 +709,23 @@
             "pedidos": 68,
             "dormentes": 7
           },
-          "top_creators": [],
+          "top_creators": [
+            {
+              "username": "leismanntai",
+              "name": "Tainara Mariana Ferreira",
+              "receita": 6135.27
+            },
+            {
+              "username": "andressapedrozza",
+              "name": "andressa",
+              "receita": 5494.86
+            },
+            {
+              "username": "avidaefeitadedesconto",
+              "name": "Thiago Rodrigo",
+              "receita": 883.04
+            }
+          ],
           "_sem_farmer": true
         }
       ],
@@ -697,7 +744,7 @@
           "id": "carol",
           "nome": "Carol",
           "faturamento": 10822.52,
-          "mom_pct": -33.2,
+          "mom_pct": -33.25,
           "trofeu": "ouro",
           "sem_farmer": false
         },
@@ -724,7 +771,7 @@
         "prospeccoes_total": 18,
         "meta": 25,
         "convertidos": 2,
-        "conversao_pct": 10.5,
+        "conversao_pct": 10.53,
         "dias_medios_1venda": 1.0
       }
     }
