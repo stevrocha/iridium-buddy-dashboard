@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-19T11:57:47-03:00",
+    "geradoEm": "2026-06-19T12:09:28-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 3,
     "diasNoMes": 30,
@@ -380,9 +380,9 @@
       "logoEmoji": "⚡",
       "color": "#7C3AED",
       "meta_mensal": 70000,
-      "faturamento_total": 29580.99,
+      "faturamento_total": 29778.98,
       "faturamento_m1": 54682.61,
-      "mom_pct": -45.9,
+      "mom_pct": -45.5,
       "creators_total": 113,
       "afiliados_total": 139,
       "total_aprovados": 252,
@@ -391,12 +391,12 @@
       "afiliados_que_venderam": 18,
       "creators_dormentes": 63,
       "afiliados_dormentes": 120,
-      "faturamento_creators": 12180.7,
+      "faturamento_creators": 12378.69,
       "faturamento_afiliados": 17400.29,
-      "pedidos_creators": 70,
+      "pedidos_creators": 71,
       "pedidos_afiliados": 95,
-      "pedidos_total": 165,
-      "ticket_medio": 179.28,
+      "pedidos_total": 166,
+      "ticket_medio": 179.39,
       "evolucao_diaria": [
         {
           "dia": 1,
@@ -472,7 +472,7 @@
         },
         {
           "dia": 19,
-          "realizado_acumulado": 29580.99
+          "realizado_acumulado": 29778.98
         }
       ],
       "farmers": [
@@ -480,22 +480,22 @@
           "id": "carol",
           "nome": "Carol",
           "color": "#EF4444",
-          "faturamento": 11620.23,
+          "faturamento": 11818.22,
           "faturamento_m1": 16212.53,
-          "mom_pct": -28.3,
+          "mom_pct": -27.1,
           "creators_total": 112,
           "creators_que_venderam": 23,
           "creators_que_postaram": 29,
           "leads_no_mes": 0,
           "dormentes": 89,
-          "pedidos": 55,
-          "ticket_medio": 211.28,
+          "pedidos": 56,
+          "ticket_medio": 211.04,
           "creators_pool": {
             "total": 37,
             "venderam": 12,
             "postaram": 29,
-            "faturamento": 8477.51,
-            "pedidos": 40,
+            "faturamento": 8675.5,
+            "pedidos": 41,
             "dormentes": 25
           },
           "afiliados_pool": {
@@ -509,7 +509,7 @@
             {
               "username": "camilepezzin",
               "name": "Camile",
-              "receita": 2740.06
+              "receita": 2938.05
             },
             {
               "username": "isabelleramalho1",
@@ -709,8 +709,8 @@
           "posicao": 2,
           "id": "carol",
           "nome": "Carol",
-          "faturamento": 11620.23,
-          "mom_pct": -28.3,
+          "faturamento": 11818.22,
+          "mom_pct": -27.1,
           "trofeu": "ouro",
           "sem_farmer": false
         },
