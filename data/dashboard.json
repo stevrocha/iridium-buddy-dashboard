@@ -1,6 +1,6 @@
 {
   "meta": {
-    "geradoEm": "2026-06-29T12:10:03-03:00",
+    "geradoEm": "2026-06-29T16:14:20-03:00",
     "mesReferencia": "2026-06",
     "schemaVersion": 3,
     "diasNoMes": 30,
@@ -13,9 +13,9 @@
       "logoEmoji": "🐾",
       "color": "#F97316",
       "meta_mensal": 80000,
-      "faturamento_total": 154783.59,
+      "faturamento_total": 156010.56,
       "faturamento_m1": 62701.47,
-      "mom_pct": 146.9,
+      "mom_pct": 148.8,
       "creators_total": 112,
       "afiliados_total": 247,
       "total_aprovados": 359,
@@ -24,12 +24,12 @@
       "afiliados_que_venderam": 25,
       "creators_dormentes": 63,
       "afiliados_dormentes": 218,
-      "faturamento_creators": 35527.61,
-      "faturamento_afiliados": 119255.98,
-      "pedidos_creators": 158,
-      "pedidos_afiliados": 580,
-      "pedidos_total": 738,
-      "ticket_medio": 209.73,
+      "faturamento_creators": 35652.71,
+      "faturamento_afiliados": 120357.85,
+      "pedidos_creators": 159,
+      "pedidos_afiliados": 588,
+      "pedidos_total": 747,
+      "ticket_medio": 208.85,
       "evolucao_diaria": [
         {
           "dia": 1,
@@ -145,7 +145,7 @@
         },
         {
           "dia": 29,
-          "realizado_acumulado": 154783.59
+          "realizado_acumulado": 156010.56
         }
       ],
       "farmers": [
@@ -153,16 +153,16 @@
           "id": "brion",
           "nome": "Brion",
           "color": "#3B82F6",
-          "faturamento": 133046.53,
+          "faturamento": 134148.4,
           "faturamento_m1": 43721.98,
-          "mom_pct": 204.3,
+          "mom_pct": 206.8,
           "creators_total": 237,
           "creators_que_venderam": 40,
           "creators_que_postaram": 22,
           "leads_no_mes": 0,
           "dormentes": 197,
-          "pedidos": 640,
-          "ticket_medio": 207.89,
+          "pedidos": 648,
+          "ticket_medio": 207.02,
           "creators_pool": {
             "total": 33,
             "venderam": 18,
@@ -174,15 +174,15 @@
           "afiliados_pool": {
             "total": 204,
             "venderam": 22,
-            "faturamento": 118594.48,
-            "pedidos": 577,
+            "faturamento": 119696.35,
+            "pedidos": 585,
             "dormentes": 182
           },
           "top_creators": [
             {
               "username": "adotadasoficial",
               "name": "Débora",
-              "receita": 93839.36
+              "receita": 94861.13
             },
             {
               "username": "bernardo_goldenr",
@@ -192,7 +192,7 @@
             {
               "username": "olivia.the.bull",
               "name": "Caroline",
-              "receita": 4347.38
+              "receita": 4427.48
             },
             {
               "username": "seuamigopitbull",
@@ -297,22 +297,22 @@
           "id": "gabi",
           "nome": "Gabriella",
           "color": "#F59E0B",
-          "faturamento": 4231.39,
+          "faturamento": 4356.49,
           "faturamento_m1": 330.22,
-          "mom_pct": 1181.4,
+          "mom_pct": 1219.3,
           "creators_total": 23,
           "creators_que_venderam": 3,
           "creators_que_postaram": 15,
           "leads_no_mes": 14,
           "dormentes": 8,
-          "pedidos": 17,
-          "ticket_medio": 248.91,
+          "pedidos": 18,
+          "ticket_medio": 242.03,
           "creators_pool": {
             "total": 22,
             "venderam": 3,
             "postaram": 15,
-            "faturamento": 4231.39,
-            "pedidos": 17,
+            "faturamento": 4356.49,
+            "pedidos": 18,
             "dormentes": 8
           },
           "afiliados_pool": {
@@ -326,7 +326,7 @@
             {
               "username": "gabigemelgo",
               "name": "Gabriela",
-              "receita": 3264.39
+              "receita": 3389.49
             },
             {
               "username": "laylagranola",
@@ -378,8 +378,8 @@
           "posicao": 1,
           "id": "brion",
           "nome": "Brion",
-          "faturamento": 133046.53,
-          "mom_pct": 204.3,
+          "faturamento": 134148.4,
+          "mom_pct": 206.8,
           "trofeu": "ouro",
           "sem_farmer": false
         },
@@ -405,8 +405,8 @@
           "posicao": 4,
           "id": "gabi",
           "nome": "Gabriella",
-          "faturamento": 4231.39,
-          "mom_pct": 1181.4,
+          "faturamento": 4356.49,
+          "mom_pct": 1219.3,
           "trofeu": "bronze",
           "sem_farmer": false
         }
@@ -425,23 +425,23 @@
       "logoEmoji": "⚡",
       "color": "#7C3AED",
       "meta_mensal": 70000,
-      "faturamento_total": 41379.4,
+      "faturamento_total": 41469.4,
       "faturamento_m1": 54682.61,
-      "mom_pct": -24.3,
-      "creators_total": 116,
+      "mom_pct": -24.2,
+      "creators_total": 117,
       "afiliados_total": 138,
-      "total_aprovados": 254,
+      "total_aprovados": 255,
       "creators_que_venderam": 42,
       "creators_que_postaram": 83,
       "afiliados_que_venderam": 21,
       "creators_dormentes": 59,
       "afiliados_dormentes": 117,
-      "faturamento_creators": 18520.91,
+      "faturamento_creators": 18610.91,
       "faturamento_afiliados": 22858.49,
-      "pedidos_creators": 111,
+      "pedidos_creators": 112,
       "pedidos_afiliados": 120,
-      "pedidos_total": 231,
-      "ticket_medio": 179.13,
+      "pedidos_total": 232,
+      "ticket_medio": 178.75,
       "evolucao_diaria": [
         {
           "dia": 1,
@@ -557,7 +557,7 @@
         },
         {
           "dia": 29,
-          "realizado_acumulado": 41379.4
+          "realizado_acumulado": 41469.4
         }
       ],
       "farmers": [
@@ -709,22 +709,22 @@
           "id": "dario",
           "nome": "Dario",
           "color": "#14B8A6",
-          "faturamento": 1895.27,
+          "faturamento": 1985.27,
           "faturamento_m1": 0.0,
           "mom_pct": null,
-          "creators_total": 20,
+          "creators_total": 21,
           "creators_que_venderam": 6,
           "creators_que_postaram": 13,
-          "leads_no_mes": 20,
+          "leads_no_mes": 21,
           "dormentes": 0,
-          "pedidos": 12,
-          "ticket_medio": 157.94,
+          "pedidos": 13,
+          "ticket_medio": 152.71,
           "creators_pool": {
-            "total": 20,
+            "total": 21,
             "venderam": 6,
             "postaram": 13,
-            "faturamento": 1895.27,
-            "pedidos": 12,
+            "faturamento": 1985.27,
+            "pedidos": 13,
             "dormentes": 0
           },
           "afiliados_pool": {
@@ -756,14 +756,14 @@
               "receita": 233.98
             },
             {
+              "username": "limagii_",
+              "name": "Giovana",
+              "receita": 189.0
+            },
+            {
               "username": "kamila_personal_",
               "name": "Kamila",
               "receita": 130.5
-            },
-            {
-              "username": "limagii_",
-              "name": "Giovana",
-              "receita": 99.0
             }
           ]
         },
@@ -832,17 +832,17 @@
           "posicao": 4,
           "id": "dario",
           "nome": "Dario",
-          "faturamento": 1895.27,
+          "faturamento": 1985.27,
           "mom_pct": null,
           "trofeu": "bronze",
           "sem_farmer": false
         }
       ],
       "sdr": {
-        "prospeccoes_total": 21,
+        "prospeccoes_total": 22,
         "meta": 25,
         "convertidos": 6,
-        "conversao_pct": 28.6,
+        "conversao_pct": 27.3,
         "dias_medios_1venda": 7.2
       }
     }
